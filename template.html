@@ -1,0 +1,2554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasa – Sacred Fragrances of India</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --saffron: #E8720C;
+      --gold: #C9941A;
+      --deep-gold: #A07020;
+      --dark-text: #2D1206;
+      --mid-text: #5A3018;
+      --light-text: #8B5E3C;
+      --card-bg: rgba(255, 248, 228, 0.70);
+      --card-border: rgba(201, 148, 26, 0.28);
+      --card-shadow: rgba(80, 30, 10, 0.13);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--dark-text);
+      font-family: 'Noto Serif', serif;
+      overflow-x: hidden;
+    }
+
+    /* Increase size & bold for all body/paragraph text (excludes headings & titles) */
+    .hero-subtitle,
+    .section-desc,
+    .prod-desc,
+    .prod-sub,
+    .pillar-desc,
+    .testi-text,
+    .heritage-text p,
+    .heritage-text .lead,
+    .wholesale-banner p,
+    .contact-item-val,
+    .footer-tagline,
+    .nav-links a,
+    .q-tag,
+    .avail-pill,
+    .wh-chip,
+    .testi-author,
+    .testi-city {
+      font-size: 1 rem !important;
+      font-weight: 500 !important;
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #FFF3DC;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    /* BACKGROUND */
+    .page-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image: url('public/ssss.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.80;
+    }
+
+
+
+    main {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 60px;
+      background: rgba(212, 198, 179, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201, 148, 26, 0.25);
+      transition: padding .3s;
+    }
+
+    .nav-logo {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.35rem;
+      color: var(--dark-text);
+      text-decoration: none;
+      letter-spacing: .06em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--dark-text);
+      text-decoration: none;
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-family: 'Noto Serif', serif;
+      transition: color .3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+
+    .prod-name-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      transition: color 0.2s;
+    }
+
+    .prod-name-link:hover {
+      color: var(--saffron);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 101;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 2px;
+      background: var(--dark-text);
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* DROPDOWN MENU */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: rgba(212, 198, 179, 0.98);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--card-border);
+      min-width: 140px;
+      padding: 10px 0;
+      list-style: none;
+      box-shadow: 0 10px 30px var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      border-radius: 4px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .dropdown-menu li {
+      width: 100%;
+      text-align: center;
+    }
+
+    .dropdown-menu a::after {
+      display: none;
+      /* no underline effect for dropdown links */
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 15px;
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--saffron), var(--gold)) !important;
+      color: #fff !important;
+      padding: 9px 22px;
+      border-radius: 2px;
+      font-weight: 700;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 40px 70px;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      font-size: .7rem;
+      letter-spacing: .44em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 1s ease .3s forwards;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '✦';
+      color: var(--gold);
+      font-size: .6rem;
+    }
+
+    .hero-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      line-height: 1.1;
+      color: var(--dark-text);
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp 1s ease .5s forwards;
+    }
+
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 50%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2.2vw, 1.45rem);
+      color: var(--mid-text);
+      font-style: italic;
+      margin-bottom: 46px;
+      max-width: 580px;
+      opacity: 0;
+      animation: fadeUp 1s ease .7s forwards;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 1s ease .9s forwards;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      color: #fff;
+      padding: 14px 42px;
+      font-family: 'Noto Serif', serif;
+      font-size: .79rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+      transition: all .3s;
+      box-shadow: 0 6px 22px rgba(232, 114, 12, .3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 34px rgba(232, 114, 12, .45);
+    }
+
+    .btn-secondary {
+      border: 1.5px solid var(--gold);
+      color: var(--dark-text);
+      padding: 13px 40px;
+      font-family: 'Noto Serif', serif;
+      font-size: .79rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: rgba(255, 248, 220, .55);
+      backdrop-filter: blur(8px);
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+      transition: all .3s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(201, 148, 26, .12);
+      color: var(--saffron);
+    }
+
+    .scroll-ind {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      opacity: .5;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .scroll-ind span {
+      font-size: .58rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: .45;
+      }
+
+      50% {
+        opacity: .9;
+      }
+    }
+
+    /* MARQUEE */
+    .marquee-strip {
+      padding: 15px 0;
+      overflow: hidden;
+      background: linear-gradient(90deg, #3D1206, #6B1A2A, #3D1206);
+      border-top: 1px solid rgba(201, 148, 26, .3);
+      border-bottom: 1px solid rgba(201, 148, 26, .3);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 55px;
+      animation: marqueeScroll 28s linear infinite;
+      white-space: nowrap;
+    }
+
+    .marquee-item {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: .67rem;
+      letter-spacing: .28em;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .marquee-item::after {
+      content: '◆';
+      color: var(--saffron);
+      font-size: .44rem;
+    }
+
+    @keyframes marqueeScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 88px 60px;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 62px;
+    }
+
+    .section-eyebrow {
+      font-size: .65rem;
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .section-eyebrow::before,
+    .section-eyebrow::after {
+      content: '';
+      height: 1px;
+      width: 46px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+
+    .section-eyebrow::after {
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+
+    .section-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.65rem, 3.5vw, 2.75rem);
+      color: var(--dark-text);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.12rem;
+      color: var(--mid-text);
+      font-style: italic;
+      max-width: 530px;
+      margin: 0 auto;
+    }
+
+    /* GLASS CARD (light) */
+    .glass {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px) saturate(140%);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      box-shadow: 0 6px 38px var(--card-shadow), inset 0 1px 0 rgba(255, 255, 255, .65);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 148, 26, .5), transparent);
+    }
+
+    /* ── PRODUCTS EDITORIAL ── */
+    .products-list {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .prod-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+      overflow: hidden;
+      border: none;
+      border-radius: 0;
+      transition: background .3s;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .prod-row:hover {
+      background: rgba(255, 248, 225, .35);
+    }
+
+    /* flip even rows */
+    .prod-row.flip {
+      direction: rtl;
+    }
+
+    .prod-row.flip>* {
+      direction: ltr;
+    }
+
+    .prod-img-col {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 360px;
+
+    }
+
+
+
+    .prod-img-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+
+
+    .prod-big-emoji {
+      font-size: 7rem;
+      filter: drop-shadow(0 8px 28px rgba(140, 80, 20, .28));
+      animation: gentleFloat 5s ease-in-out infinite;
+      z-index: 2;
+      position: relative;
+    }
+
+    @keyframes gentleFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-10px) scale(1.03);
+      }
+    }
+
+    .prod-badge-img {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 3;
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      color: #fff;
+      font-size: .57rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+    }
+
+    .prod-text-col {
+      padding: 50px 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid rgba(201, 148, 26, .12);
+    }
+
+    .prod-row.flip .prod-text-col {
+      border-left: none;
+      border-right: 1px solid rgba(201, 148, 26, .12);
+    }
+
+    .prod-cat {
+      font-size: .59rem;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 9px;
+    }
+
+    .prod-name {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.42rem;
+      color: var(--dark-text);
+      line-height: 1.25;
+      margin-bottom: 6px;
+      font-weight: 900;
+    }
+
+    .prod-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .98rem;
+      color: var(--light-text);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .prod-divider {
+      width: 46px;
+      height: 2px;
+      background: linear-gradient(to right, var(--saffron), var(--gold));
+      margin-bottom: 18px;
+    }
+
+    .prod-qualities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+
+    .q-tag {
+      font-size: .59rem;
+      letter-spacing: .1em;
+      color: var(--deep-gold);
+      border: 1px solid rgba(160, 112, 32, .28);
+      padding: 4px 10px;
+      background: rgba(201, 148, 26, .07);
+    }
+
+    .prod-desc {
+      font-size: .88rem;
+      color: var(--mid-text);
+      line-height: 1.82;
+      margin-bottom: 26px;
+    }
+
+    .prod-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .wa-order-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      color: #fff;
+      padding: 12px 24px;
+      font-family: 'Noto Serif', serif;
+      font-size: .74rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      text-decoration: none;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      transition: all .3s;
+      box-shadow: 0 4px 18px rgba(232, 114, 12, .24);
+    }
+
+    .wa-order-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(232, 114, 12, .4);
+    }
+
+    .avail-pill {
+      font-size: .61rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--mid-text);
+      border: 1px solid rgba(160, 112, 32, .25);
+      padding: 6px 13px;
+    }
+
+    /* HERITAGE */
+    .heritage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .heritage-text .lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.52rem;
+      font-style: italic;
+      color: var(--dark-text);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .heritage-text p {
+      color: var(--mid-text);
+      line-height: 1.9;
+      margin-bottom: 15px;
+      font-size: .89rem;
+    }
+
+    .heritage-visual {
+      position: relative;
+      height: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .heritage-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hc1 {
+      width: 350px;
+      height: 350px;
+      border-color: rgba(201, 148, 26, .2);
+      animation: rotateSlow 30s linear infinite;
+    }
+
+    .hc2 {
+      width: 250px;
+      height: 250px;
+      border-color: rgba(232, 114, 12, .25);
+      animation: rotateSlow 20s linear infinite reverse;
+    }
+
+    .hc3 {
+      width: 155px;
+      height: 155px;
+      border-color: rgba(201, 148, 26, .4);
+      background: rgba(201, 148, 26, .06);
+      backdrop-filter: blur(8px);
+    }
+
+    .hc-center {
+      font-size: 4.8rem;
+      filter: drop-shadow(0 0 28px rgba(232, 114, 12, .5));
+      animation: gentleFloat 5s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .hc-dot {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 9px var(--gold);
+    }
+
+    @keyframes rotateSlow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 42px;
+      margin-top: 38px;
+      border-top: 1px solid rgba(201, 148, 26, .18);
+      padding-top: 36px;
+    }
+
+    .stat-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.95rem;
+      color: var(--gold);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: .63rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--light-text);
+      margin-top: 3px;
+      display: block;
+    }
+
+    /* PILLARS */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .pillar-card {
+      padding: 36px 28px;
+      text-align: center;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 48px rgba(80, 30, 10, .18);
+    }
+
+    .pillar-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      display: block;
+      filter: drop-shadow(0 3px 10px rgba(140, 80, 20, .2));
+    }
+
+    .pillar-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: .86rem;
+      color: var(--dark-text);
+      margin-bottom: 11px;
+    }
+
+    .pillar-desc {
+      font-size: .83rem;
+      color: var(--mid-text);
+      line-height: 1.75;
+    }
+
+    /* TESTIMONIALS */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .testi-card {
+      padding: 30px 26px;
+    }
+
+    .testi-stars {
+      color: var(--gold);
+      font-size: .74rem;
+      margin-bottom: 14px;
+      letter-spacing: 4px;
+    }
+
+    .testi-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.03rem;
+      color: var(--dark-text);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .testi-author {
+      font-size: .67rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--saffron);
+    }
+
+    .testi-city {
+      font-size: .61rem;
+      color: var(--light-text);
+      margin-top: 3px;
+    }
+
+    /* WHOLESALE */
+    .wholesale-wrap {
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .wholesale-banner {
+      padding: 56px 62px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .wh-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232, 114, 12, .09);
+      border: 1px solid rgba(232, 114, 12, .28);
+      padding: 5px 14px;
+      font-size: .61rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 16px;
+    }
+
+    .wholesale-banner h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.75rem;
+      color: var(--dark-text);
+      margin-bottom: 11px;
+    }
+
+    .wholesale-banner p {
+      color: var(--mid-text);
+      font-size: .88rem;
+      line-height: 1.75;
+      max-width: 470px;
+    }
+
+    .wh-chips {
+      display: flex;
+      gap: 11px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .wh-chip {
+      padding: 9px 15px;
+      border: 1px solid rgba(160, 112, 32, .26);
+      font-size: .73rem;
+      color: var(--deep-gold);
+    }
+
+    .wholesale-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      padding: 44px 40px;
+    }
+
+    .contact-card h3 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.08rem;
+      color: var(--dark-text);
+      margin-bottom: 26px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      background: rgba(201, 148, 26, .07);
+    }
+
+    .contact-item-label {
+      font-size: .59rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 4px;
+    }
+
+    .contact-item-val {
+      color: var(--dark-text);
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+
+    .contact-item-val a {
+      color: var(--deep-gold);
+      text-decoration: none;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: .6rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--deep-gold);
+      margin-bottom: 6px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      background: rgba(255, 248, 225, .65);
+      border: 1px solid rgba(160, 112, 32, .26);
+      color: var(--dark-text);
+      padding: 11px 14px;
+      font-family: 'Noto Serif', serif;
+      font-size: .86rem;
+      outline: none;
+      transition: border-color .3s;
+      border-radius: 2px;
+    }
+
+    .form-select option {
+      background: #FFF3DC;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--gold);
+      background: rgba(255, 248, 225, .9);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(90, 48, 24, .32);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      border: none;
+      color: #fff;
+      padding: 13px;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: .77rem;
+      letter-spacing: .14em;
+      cursor: pointer;
+      transition: all .3s;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    }
+
+    .submit-btn:hover {
+      box-shadow: 0 8px 28px rgba(232, 114, 12, .35);
+      transform: translateY(-2px);
+    }
+
+    /* WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .wa-bubble {
+      background: rgba(255, 250, 235, .93);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(37, 211, 102, .35);
+      color: var(--dark-text);
+      padding: 8px 14px;
+      font-size: .75rem;
+      border-radius: 15px 15px 3px 15px;
+      white-space: nowrap;
+      display: none;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+    }
+
+    .whatsapp-float:hover .wa-bubble {
+      display: block;
+    }
+
+    .wa-btn {
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 5px 22px rgba(37, 211, 102, .4);
+      animation: waPulse 2.5s ease-in-out infinite;
+      transition: transform .3s;
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.1);
+      animation: none;
+      box-shadow: 0 10px 32px rgba(37, 211, 102, .6);
+    }
+
+    .wa-btn svg {
+      width: 27px;
+      height: 27px;
+      fill: white;
+    }
+
+    @keyframes waPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 5px 22px rgba(37, 211, 102, .4);
+      }
+
+      50% {
+        box-shadow: 0 5px 30px rgba(37, 211, 102, .7), 0 0 0 8px rgba(37, 211, 102, .09);
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      background: rgba(16, 6, 2, .93);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(201, 148, 26, .2);
+      padding: 48px 60px 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 52px;
+      max-width: 1140px;
+      margin: 0 auto 44px;
+    }
+
+    .footer-brand-name {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.38rem;
+      color: var(--gold);
+      margin-bottom: 13px;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: rgba(255, 248, 230, .38);
+      font-size: .9rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      max-width: 265px;
+    }
+
+    .footer-col h4 {
+      font-size: .65rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 17px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 9px;
+    }
+
+    .footer-col a {
+      color: rgba(255, 248, 230, .4);
+      text-decoration: none;
+      font-size: .83rem;
+      transition: color .3s;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(201, 148, 26, .1);
+      padding-top: 24px;
+      max-width: 1140px;
+      margin: 0 auto;
+      font-size: .69rem;
+      color: rgba(255, 248, 230, .26);
+      letter-spacing: .08em;
+    }
+
+    .footer-om {
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    /* TINTED SECTIONS */
+    .sec-tinted {
+      background: rgba(255, 238, 200, .28);
+      border-top: 1px solid rgba(201, 148, 26, .12);
+      border-bottom: 1px solid rgba(201, 148, 26, .12);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(26px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px) {
+      section {
+        padding: 70px 28px;
+      }
+
+      nav {
+        padding: 13px 26px;
+      }
+
+      .prod-row {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .prod-row.flip {
+        direction: ltr;
+      }
+
+      .prod-text-col {
+        border-left: none !important;
+        border-right: none !important;
+        border-top: 1px solid rgba(201, 148, 26, .12);
+        padding: 34px 30px;
+      }
+
+      .prod-img-col {
+        min-height: 270px;
+      }
+
+      .heritage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .heritage-visual {
+        height: 300px;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wholesale-banner {
+        grid-template-columns: 1fr;
+        padding: 36px 30px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media(max-width:768px) {
+      nav {
+        padding: 10px 20px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: rgba(212, 198, 179, 0.98);
+        backdrop-filter: blur(14px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        padding-top: 60px;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .dropdown-menu {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        backdrop-filter: none;
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+        padding: 5px 0 0;
+      }
+
+      .dropdown:active .dropdown-menu,
+      .dropdown:hover .dropdown-menu {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .promise-container {
+        grid-template-columns: 1fr !important;
+      }
+
+      .promise-image {
+        display: none !important;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-row {
+        flex-wrap: wrap;
+        gap: 26px;
+      }
+
+      footer {
+        padding: 42px 20px 26px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 9px;
+        text-align: center;
+      }
+
+      .hc1 {
+        width: 240px;
+        height: 240px;
+      }
+
+      .hc2 {
+        width: 170px;
+        height: 170px;
+      }
+
+      .hc3 {
+        width: 110px;
+        height: 110px;
+      }
+    }
+
+    /* SPA ROUTE SYSTEM */
+    .route-page {
+      display: none;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .45s ease, transform .45s ease;
+    }
+
+    .route-page.route-active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-links a.nav-active {
+      color: var(--gold);
+    }
+
+    .nav-links a.nav-active::after {
+      transform: scaleX(1);
+    }
+
+    /* AGARBATTI — taller rows to show full product images */
+    #agarbatti .prod-row {
+      min-height: 580px;
+    }
+
+    #agarbatti .prod-img-col {
+      min-height: 650px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- BACKGROUND IMAGE -->
+  <div class="page-bg"></div>
+
+  <!-- WHATSAPP FLOAT -->
+  <div class="whatsapp-float">
+    <div class="wa-bubble">🙏 Order Wholesale &amp; Retail via WhatsApp</div>
+    <a href="https://wa.me/917598465053?text=Hi%21+I+am+interested+in+Jasa+products.+Please+share+details."
+      target="_blank" class="wa-btn" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#/home" class="nav-logo">Jasa</a>
+    <ul class="nav-links">
+      <li><a href="#/home" data-route="home">Home</a></li>
+      <li class="dropdown">
+        <a href="#/products" class="dropbtn">Products <i class="fa fa-caret-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html#products" data-route="products">Dhoop</a></li>
+          <li><a href="index.html#agarbatti" data-route="agarbatti">Agarbatti</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="#/quality" data-route="quality">Quality</a></li>
+      <li><a href="#/wholesale" data-route="wholesale">Wholesale</a></li>
+      <li><a href="#/contact" data-route="contact" class="nav-cta">Enquire Now</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ROUTE: HOME -->
+    <div class="route-page" data-route="home">
+
+      <!-- HERO -->
+      <section class="hero" id="home"
+        style="display:grid;grid-template-columns:1fr 1fr;align-items:center;text-align:left;gap:40px;padding:120px 60px 70px;">
+        <!-- Left: Hero Text -->
+        <div>
+          <div class="hero-eyebrow" style="justify-content:flex-start;">Sacred Fragrances of Bharat</div>
+          <h1 class="hero-title">
+            Where Divinity
+            <span class="highlight">Meets Fragrance</span>
+          </h1>
+          <p class="hero-subtitle">Handcrafted sambrani &amp; dhoop offerings — born from ancient temple traditions,
+            perfected for modern devotion</p>
+          <div class="hero-btns" style="justify-content:flex-start;">
+            <a href="#/products" class="btn-primary">Explore Products</a>
+            <a href="https://wa.me/917598465053" target="_blank" class="btn-secondary">🛒 Order Now</a>
+          </div>
+        </div>
+        <!-- Right: Product Image -->
+        <div style="display:flex;align-items:center;justify-content:center;">
+          <img src="public/001.png" alt="Jasa Product Showcase"
+            style="width:120%;max-width:800px;border-radius:13px;opacity:1;">
+        </div>
+      </section>
+
+      <!-- MARQUEE -->
+      <div class="marquee-strip">
+        <div class="marquee-track">
+          <span class="marquee-item">Premium Sambrani Cups</span><span class="marquee-item">Computer
+            Sambrani</span><span class="marquee-item">Loban Dhoop</span><span class="marquee-item">Gugal Dhoop
+            Sticks</span><span class="marquee-item">Kesar Rose Sambrani</span><span class="marquee-item">Chandan
+            Powder</span><span class="marquee-item">Marikolunthu Agarbatti</span><span class="marquee-item">Jasmine
+            Agarbatti</span><span class="marquee-item">Rose Agarbatti</span><span class="marquee-item">Sandal
+            Agarbatti</span><span class="marquee-item">Pineapple Agarbatti</span><span class="marquee-item">Natural
+            Agarbatti</span><span class="marquee-item">Royal Agarbatti</span><span class="marquee-item">Traditional
+            Agarbatti</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan
+            India Delivery</span>
+          <span class="marquee-item">Premium Sambrani Cups</span><span class="marquee-item">Computer
+            Sambrani</span><span class="marquee-item">Loban Dhoop</span><span class="marquee-item">Gugal Dhoop
+            Sticks</span><span class="marquee-item">Kesar Rose Sambrani</span><span class="marquee-item">Chandan
+            Powder</span><span class="marquee-item">Marikolunthu Agarbatti</span><span class="marquee-item">Jasmine
+            Agarbatti</span><span class="marquee-item">Rose Agarbatti</span><span class="marquee-item">Sandal
+            Agarbatti</span><span class="marquee-item">Pineapple Agarbatti</span><span class="marquee-item">Natural
+            Agarbatti</span><span class="marquee-item">Royal Agarbatti</span><span class="marquee-item">Traditional
+            Agarbatti</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan
+            India Delivery</span>
+        </div>
+      </div><!-- marquee-strip -->
+    </div><!-- /route:home -->
+
+    <!-- ROUTE: PRODUCTS -->
+    <div class="route-page" data-route="products">
+      <section id="products">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Our Sacred Collection</div>
+          <h2 class="section-title">Premium Dhoop &amp; Sambrani</h2>
+          <p class="section-desc">Each product is a prayer — blended with devotion, crafted with tradition</p>
+        </div>
+
+        <div class="products-list">
+
+          <!-- P1 -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-1" style="position:relative;">
+                <img src="public/002.png" alt="Classic Sambrani Cups"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img">Bestseller</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Traditional Cup Series</div>
+              <h3 class="prod-name"><a href="classic-sambrani.html" class="prod-name-link">Classic
+                  Sambrani Cups</a></h3>
+              <div class="prod-sub">ಸಾಂಬ್ರಾಣಿ ಕಪ್ — Benzoin Resin Blend</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">100% Natural</span><span class="q-tag">Long
+                  Burning</span><span class="q-tag">Temple Grade</span></div>
+              <p class="prod-desc">Rich benzoin resin packed in traditional clay cups — releases thick, fragrant white
+                smoke that purifies homes, temples &amp; sacred spaces. Burns up to 20 minutes per cup. Trusted by
+                households and temples across India for generations.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Classic+Sambrani+Cups" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P2 flip -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-2" style="position:relative;">
+                <img src="public/003.png" alt="Computer Sambrani"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#1a8c4e,#2ecc71);">New Era</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Modern Series</div>
+              <h3 class="prod-name"><a href="computer-sambrani.html" class="prod-name-link">Computer
+                  Sambrani</a></h3>
+              <div class="prod-sub">Electric Dhoop Diffuser System</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Smokeless Option</span><span class="q-tag">Electric
+                  Safe</span><span class="q-tag">Modern Homes</span></div>
+              <p class="prod-desc">Revolutionary electric sambrani designed for apartments, offices &amp;
+                smoke-sensitive
+                spaces. Specially formulated resin discs work seamlessly with electric burners — ancient fragrance,
+                modern
+                convenience. Perfect for today's urban devotee.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Computer+Sambrani" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P3 -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-3" style="position:relative;">
+                <img src="public/004.png" alt="Loban Dhoop Sticks"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#8B1A2A,#C9941A);">Premium</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Resin Collection</div>
+              <h3 class="prod-name"><a href="loban-dhoop.html" class="prod-name-link">Loban Dhoop
+                  Sticks</a></h3>
+              <div class="prod-sub">Pure Frankincense — Benzoin Blend</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Anti-Bacterial</span><span class="q-tag">Vastu
+                  Friendly</span><span class="q-tag">Slow Burn</span></div>
+              <p class="prod-desc">Pure loban (benzoin) blended with sacred herbs — scientifically proven to purify
+                air.
+                Each stick burns for 45+ minutes, filling spaces with sacred, calming fragrance used in temples for
+                centuries. Ideal for daily puja and meditation.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Loban+Dhoop+Sticks" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P4 flip -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-4" style="position:relative;">
+                <img src="public/005.png" alt="Kesar Rose Sambrani"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#7B1FA2,#C9941A);">Floral</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Floral Series</div>
+              <h3 class="prod-name"><a href="kesar-rose-sambrani.html" class="prod-name-link">Kesar Rose
+                  Sambrani</a></h3>
+              <div class="prod-sub">Saffron &amp; Rose Petal Infusion</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Kesar Infused</span><span class="q-tag">Gift
+                  Worthy</span><span class="q-tag">Pooja Special</span></div>
+              <p class="prod-desc">Rare saffron strands and dried rose petals blended into premium sambrani cups. An
+                indulgent fragrance for special poojas, weddings, and gifting — the fragrance of devotion and luxury
+                combined. A prized offering for every festive occasion.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Kesar+Rose+Sambrani" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P5 -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-5" style="position:relative;">
+                <img src="public/006.png" alt="Gugal Dhoop Cones"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#2E7D32,#A5D6A7);color:#1a1a1a;">
+                  Herbal</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Herbal Series</div>
+              <h3 class="prod-name"><a href="gugal-dhoop-cones.html" class="prod-name-link">Gugal Dhoop
+                  Cones</a></h3>
+              <div class="prod-sub">Sacred Commiphora Mukul Blend</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Ayurvedic</span><span class="q-tag">Air
+                  Purifier</span><span class="q-tag">Stress Relief</span></div>
+              <p class="prod-desc">Gugal (Commiphora wightii) — the sacred resin of Vedic scriptures. Cone format for
+                easy
+                burning, deep earthy aroma that balances energy, relieves stress, and sanctifies the atmosphere. A
+                staple
+                for serious spiritual practice and temple supply.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Gugal+Dhoop+Cones" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P6 flip -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-6" style="position:relative;">
+                <img src="public/007.png" alt="Chandan Sambrani Powder"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#5D4037,#C9941A);">Heritage</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Wood Series</div>
+              <h3 class="prod-name"><a href="chandan-sambrani-powder.html" class="prod-name-link">Chandan
+                  Sambrani Powder</a></h3>
+              <div class="prod-sub">Sandalwood &amp; Sambrani Fusion</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Pure Sandalwood</span><span class="q-tag">Meditation
+                  Grade</span><span class="q-tag">Bulk Packing</span></div>
+              <p class="prod-desc">Ground sandalwood bark fused with pure sambrani resin — the most sacred fragrance
+                combination in Hindu tradition. Perfect for daily puja, meditation halls &amp; bulk temple supply.
+                Available in wholesale quantities with custom packaging options.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Chandan+Sambrani+Powder"
+                  target="_blank" class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div><!-- /route:products -->
+
+    <!-- ROUTE: AGARBATTI -->
+    <div class="route-page" data-route="agarbatti">
+      <section id="agarbatti">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Agarbatti Collection</div>
+          <h2 class="section-title">Sacred Sticks. Divine Fragrance.</h2>
+          <p class="section-desc">Eight sacred fragrances — handrolled with devotion, rooted in ancient tradition</p>
+        </div>
+
+        <div class="products-list">
+
+          <!-- A1 — Marikolunthu Agarbatti (normal, tint-1) -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-1" style="position:relative;">
+                <img src="public/111.png" alt="Marikolunthu Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#2D6B1A,#6DB33F);">Herbal</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Herbal Series</div>
+              <h3 class="prod-name"><a href="marikolunthu.html" class="prod-name-link">Marikolunthu
+                  Agarbatti</a></h3>
+              <div class="prod-sub">Plectranthus amboinicus — Sacred Herb Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Herbal Blend</span><span class="q-tag">Temple
+                  Grade</span><span class="q-tag">Long Lasting</span></div>
+              <p class="prod-desc">Marikolunthu — the sacred Indian borage — is a revered herb in South Indian temple
+                traditions. Its warm, earthy, camphor-like fragrance purifies spaces, invokes blessings, and deepens
+                meditation. Handrolled with pure herb extract and natural binding. A true offering of nature's sanctity.
+              </p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Marikolunthu+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A2 — Jasmine Agarbatti (flip, tint-2) -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-2" style="position:relative;">
+                <img src="public/222.png" alt="Jasmine Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#7B1FA2,#F8BBD0);color:#1a1a1a;">
+                  Floral</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Floral Series</div>
+              <h3 class="prod-name"><a href="jasmine.html" class="prod-name-link">Jasmine
+                  Agarbatti</a></h3>
+              <div class="prod-sub">Mallipoo — South Indian Jasmine Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Pure Floral</span><span
+                  class="q-tag">Devotional</span><span class="q-tag">Daily Puja</span></div>
+              <p class="prod-desc">The fragrance of South India's most beloved bloom — pure Mallipoo jasmine. Each stick
+                releases a rich, sweet, devotional fragrance that has graced temple offerings and bridal ceremonies for
+                centuries. Ideal for morning and evening puja, meditation, and sacred rituals.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Jasmine+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A3 — Rose Agarbatti (normal, tint-3) -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-3" style="position:relative;">
+                <img src="public/333.png" alt="Rose Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#C62828,#E8720C);">Floral</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Floral Series</div>
+              <h3 class="prod-name"><a href="rose.html" class="prod-name-link">Rose Agarbatti</a>
+              </h3>
+              <div class="prod-sub">Gulab — Rose Petal Incense Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Pure Rose</span><span class="q-tag">Romantic</span><span
+                  class="q-tag">Daily Use</span></div>
+              <p class="prod-desc">Crafted from hand-picked rose petals blended with a natural masala base — our Rose
+                Agarbatti fills any space with the warm, timeless fragrance of the Gulab. Beloved for daily puja,
+                offerings to deities, and creating a serene atmosphere in homes and temples.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Rose+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A4 — Sandal Agarbatti (flip, tint-4) -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-4" style="position:relative;">
+                <img src="public/444.png" alt="Sandal Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#5D4037,#C9941A);">Premium</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Classic Series</div>
+              <h3 class="prod-name"><a href="sandal.html" class="prod-name-link">Sandal Agarbatti</a>
+              </h3>
+              <div class="prod-sub">Chandan — Pure Sandalwood Incense Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Pure Sandalwood</span><span class="q-tag">Temple
+                  Grade</span><span class="q-tag">Premium</span></div>
+              <p class="prod-desc">Sandalwood — the most sacred fragrance in Hindu tradition. Our Chandan Agarbatti is
+                made with authentic Mysore sandalwood extract, offering a deep, creamy, meditative aroma that has
+                accompanied prayers for millennia. Every stick is a bridge between the earthly and the divine.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Sandal+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A5 — Pineapple Agarbatti (normal, tint-5) -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-5" style="position:relative;">
+                <img src="public/555.png" alt="Pineapple Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#F9A825,#43A047);color:#1a1a1a;">
+                  Fresh</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Fruity Series</div>
+              <h3 class="prod-name"><a href="pineapple.html" class="prod-name-link">Pineapple
+                  Agarbatti</a></h3>
+              <div class="prod-sub">Tropical — Pineapple Incense Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Tropical Scent</span><span class="q-tag">Fresh</span><span
+                  class="q-tag">Uplifting</span></div>
+              <p class="prod-desc">A burst of tropical freshness — Pineapple Agarbatti brings an uplifting, energizing
+                fragrance that brightens living spaces and mood. Perfect for homes, gifting, and festive occasions. A
+                joyful, modern fragrance that blends beautifully with South India's vibrant spirit.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Pineapple+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A6 — Natural Agarbatti (flip, tint-6) -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-6" style="position:relative;">
+                <img src="public/666.png" alt="Natural Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#1a8c4e,#2ecc71);">Pure</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Pure Series</div>
+              <h3 class="prod-name"><a href="natural.html" class="prod-name-link">Natural
+                  Agarbatti</a></h3>
+              <div class="prod-sub">Masala Sticks — 100% Natural Blend</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Zero Chemicals</span><span
+                  class="q-tag">Eco-Friendly</span><span class="q-tag">Handrolled</span></div>
+              <p class="prod-desc">Zero synthetics, zero artificial fragrance — just nature in its purest form.
+                Handrolled using the traditional masala method with wild herbs, resins, and botanical extracts. Safe for
+                children, elderly, and those sensitive to chemical fragrances. Clean burning, minimal smoke, maximum
+                sanctity.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Natural+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A7 — Royal Agarbatti (normal, tint-1) -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-1" style="position:relative;">
+                <img src="public/777.png" alt="Royal Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#4A148C,#C9941A);">Luxury</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Premium Series</div>
+              <h3 class="prod-name"><a href="royal.html" class="prod-name-link">Royal Agarbatti</a>
+              </h3>
+              <div class="prod-sub">Shahi — Premium Luxury Incense Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Premium Blend</span><span class="q-tag">Long
+                  Burning</span><span class="q-tag">Luxury</span></div>
+              <p class="prod-desc">Inspired by royal court fragrances — a rare blend of oud, musk, saffron, and
+                sandalwood. Each Royal stick burns for over an hour, releasing a complex, majestic fragrance suited for
+                special occasions, gifting, and premium pooja rooms. Indulgence in every wisp of sacred smoke.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Royal+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A8 — Traditional Agarbatti (flip, tint-2) -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-2" style="position:relative;">
+                <img src="public/888.png" alt="Traditional Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#8B1A2A,#C9941A);">Heritage</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Heritage Series</div>
+              <h3 class="prod-name"><a href="traditional.html" class="prod-name-link">Traditional
+                  Agarbatti</a></h3>
+              <div class="prod-sub">Parambarai — Ancestral Recipe Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Ancient Recipe</span><span
+                  class="q-tag">Handcrafted</span><span class="q-tag">Temple Grade</span></div>
+              <p class="prod-desc">Made from a family recipe passed through generations — Traditional Agarbatti uses the
+                same ingredients and handrolling technique our ancestors offered in temples. A blend of benzoin,
+                vetiver, tulsi, and neem bark creates an unmistakably authentic fragrance that resonates with devotion,
+                memory, and heritage.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Traditional+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div><!-- /route:agarbatti -->
+
+
+
+    <!-- ROUTE: QUALITY -->
+    <div class="route-page" data-route="quality">
+      <section id="quality">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Why Choose Us</div>
+          <h2 class="section-title">The Jasa Promise</h2>
+          <p class="section-desc">Every batch is a ritual. Every ingredient is sacred. Every product is a blessing.
+          </p>
+        </div>
+        <div class="promise-container"
+          style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 70px; max-width: 1100px; margin: 0 auto; align-items: start; position: relative;">
+          <!-- Left: Vertical List -->
+          <div class="promise-list" style="display: flex; flex-direction: column; gap: 50px;">
+            <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Lotus / botanical -->
+                  <path d="M12 20c0 0-5-3.5-5-8a5 5 0 0110 0c0 4.5-5 8-5 8z" fill="#C9941A" fill-opacity=".15"
+                    stroke="#C9941A" stroke-width="1.3" stroke-linejoin="round" />
+                  <path d="M12 14c0 0-3-2-3-5a3 3 0 016 0c0 3-3 5-3 5z" fill="#E8720C" fill-opacity=".25"
+                    stroke="#E8720C" stroke-width="1.2" stroke-linejoin="round" />
+                  <path d="M7 10c-1.5-1-2.5-3-1.5-5C7 6 8 8 8.5 10" stroke="#C9941A" stroke-width="1.2"
+                    stroke-linecap="round" fill="none" />
+                  <path d="M17 10c1.5-1 2.5-3 1.5-5C17 6 16 8 15.5 10" stroke="#C9941A" stroke-width="1.2"
+                    stroke-linecap="round" fill="none" />
+                  <line x1="12" y1="14" x2="12" y2="21" stroke="#C9941A" stroke-width="1.4" stroke-linecap="round" />
+                  <line x1="9" y1="21" x2="15" y2="21" stroke="#C9941A" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  style="font-family: 'Cinzel Decorative', serif; font-size: 1.25rem; color: var(--dark-text); margin-bottom: 10px; font-weight: 700;">
+                  100% Natural Ingredients</h3>
+                <p style="font-size: .95rem; color: var(--mid-text); line-height: 1.8;">Zero synthetic fragrances,
+                  zero
+                  chemicals. Pure resins, pure herbs, pure intention. Sourced directly from trusted botanical farms
+                  across
+                  India.</p>
+              </div>
+            </div>
+            <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Om flame / temple lamp -->
+                  <path d="M12 3c0 0-1 3 0 5s3 3 2 6c-1 2-3 3-3 3" stroke="#E8720C" stroke-width="1.4"
+                    stroke-linecap="round" fill="none" />
+                  <path d="M12 3c0 0 1 3 0 5s-3 3-2 6c1 2 3 3 3 3" stroke="#C9941A" stroke-width="1.4"
+                    stroke-linecap="round" fill="none" />
+                  <ellipse cx="12" cy="17.5" rx="4" ry="1.5" fill="#C9941A" fill-opacity=".2" stroke="#C9941A"
+                    stroke-width="1.2" />
+                  <rect x="9.5" y="19" width="5" height="1.5" rx="0.75" fill="#C9941A" fill-opacity=".4" />
+                  <path d="M8 21h8" stroke="#C9941A" stroke-width="1.4" stroke-linecap="round" />
+                  <circle cx="12" cy="8" r="1.5" fill="#E8720C" fill-opacity=".5" />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  style="font-family: 'Cinzel Decorative', serif; font-size: 1.25rem; color: var(--dark-text); margin-bottom: 10px; font-weight: 700;">
+                  Temple-Grade Purity</h3>
+                <p style="font-size: .95rem; color: var(--mid-text); line-height: 1.8;">Our formulations are trusted
+                  by
+                  hundreds of temples across India. The same quality that sanctifies sacred shrines, now available for
+                  your home.</p>
+              </div>
+            </div>
+            <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Award ribbon / certified badge -->
+                  <circle cx="12" cy="9" r="6" fill="#C9941A" fill-opacity=".12" stroke="#C9941A" stroke-width="1.4" />
+                  <path d="M9 9l2 2 4-4" stroke="#E8720C" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8.5 14.5L7 21l5-2 5 2-1.5-6.5" stroke="#C9941A" stroke-width="1.3" stroke-linecap="round"
+                    stroke-linejoin="round" fill="#C9941A" fill-opacity=".1" />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  style="font-family: 'Cinzel Decorative', serif; font-size: 1.25rem; color: var(--dark-text); margin-bottom: 10px; font-weight: 700;">
+                  Scientifically Validated</h3>
+                <p style="font-size: .95rem; color: var(--mid-text); line-height: 1.8;">Sambrani and loban smoke are
+                  proven to have antimicrobial properties. Our products purify air and create a truly sacred
+                  atmosphere.
+                </p>
+              </div>
+            </div>
+            <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Wax-seal / shield freshness -->
+                  <path d="M12 2l2.4 4.8 5.3.8-3.85 3.75.9 5.3L12 14.1l-4.75 2.55.9-5.3L4.3 7.6l5.3-.8L12 2z"
+                    fill="#C9941A" fill-opacity=".15" stroke="#C9941A" stroke-width="1.3" stroke-linejoin="round" />
+                  <path d="M9.5 11.5l2 2 3.5-3.5" stroke="#E8720C" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <line x1="12" y1="17" x2="12" y2="21" stroke="#C9941A" stroke-width="1.3" stroke-linecap="round"
+                    stroke-dasharray="1.5 2" />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  style="font-family: 'Cinzel Decorative', serif; font-size: 1.25rem; color: var(--dark-text); margin-bottom: 10px; font-weight: 700;">
+                  Freshness Guaranteed</h3>
+                <p style="font-size: .95rem; color: var(--mid-text); line-height: 1.8;">Every batch is packed fresh,
+                  sealed airtight, with a 24-month shelf life. Our curing process locks in fragrance potency until
+                  first
+                  use.</p>
+              </div>
+            </div>
+            <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Handshake -->
+                  <path d="M3 12l4-4h4l3 3h3l4-3" stroke="#C9941A" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M3 12l2 4 3-1 3 3 3-3 3 1 2-4" stroke="#E8720C" stroke-width="1.3" stroke-linecap="round"
+                    stroke-linejoin="round" fill="#E8720C" fill-opacity=".08" />
+                  <circle cx="7" cy="10" r="1" fill="#C9941A" />
+                  <circle cx="17" cy="10" r="1" fill="#C9941A" />
+                  <path d="M10 8l2 2 2-2" stroke="#C9941A" stroke-width="1.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  style="font-family: 'Cinzel Decorative', serif; font-size: 1.25rem; color: var(--dark-text); margin-bottom: 10px; font-weight: 700;">
+                  Wholesale Friendly</h3>
+                <p style="font-size: .95rem; color: var(--mid-text); line-height: 1.8;">Flexible MOQs, custom
+                  packaging,
+                  bulk pricing, and dedicated support. Lasting partnerships with distributors across 28 Indian states.
+                </p>
+              </div>
+            </div>
+            <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Delivery truck -->
+                  <rect x="1" y="8" width="13" height="9" rx="1.5" fill="#C9941A" fill-opacity=".12" stroke="#C9941A"
+                    stroke-width="1.3" />
+                  <path d="M14 10h4l3 4v3h-7v-7z" fill="#E8720C" fill-opacity=".15" stroke="#E8720C" stroke-width="1.3"
+                    stroke-linejoin="round" />
+                  <circle cx="5.5" cy="18.5" r="1.5" fill="#C9941A" stroke="#C9941A" stroke-width=".8" />
+                  <circle cx="17.5" cy="18.5" r="1.5" fill="#E8720C" stroke="#E8720C" stroke-width=".8" />
+                  <line x1="7" y1="8" x2="7" y2="17" stroke="#C9941A" stroke-width="1" stroke-linecap="round"
+                    stroke-dasharray="1.5 2" />
+                  <path d="M3 11h7" stroke="#C9941A" stroke-width="1.2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div>
+                <h3
+                  style="font-family: 'Cinzel Decorative', serif; font-size: 1.25rem; color: var(--dark-text); margin-bottom: 10px; font-weight: 700;">
+                  Pan India Delivery</h3>
+                <p style="font-size: .95rem; color: var(--mid-text); line-height: 1.8;">Carefully packed to prevent
+                  transit damage. Retail and wholesale shipments dispatched within 24–48 hours to all major cities and
+                  towns.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Sticky Image -->
+          <div class="promise-image reveal"
+            style="position: sticky; top: 130px; display: flex; justify-content: center;">
+            <img src="public/009.png" alt="The Jasa Promise"
+              style="width: 100%; max-width: 480px; height: auto; border-radius: 16px; filter: drop-shadow(0 12px 36px rgba(100, 40, 10, 0.18));">
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="sec-tinted">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Devotees Speak</div>
+          <h2 class="section-title">Voices of the Sacred</h2>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card glass reveal">
+            <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="testi-text">"The moment we light the Classic Sambrani Cups, the entire house transforms. The
+              fragrance is exactly like in our ancestral temple. Absolutely divine quality."</p>
+            <div class="testi-author">Smt. Padmavathi R.</div>
+            <div class="testi-city">Chennai, Tamil Nadu</div>
+          </div>
+          <div class="testi-card glass reveal">
+            <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="testi-text">"I supply to 12 temples in Karnataka. Jasa is the only brand whose quality has never
+              disappointed us. Consistent, authentic, and the priests love it."</p>
+            <div class="testi-author">Sri Manjunath Stores</div>
+            <div class="testi-city">Mysuru — Wholesale Partner</div>
+          </div>
+          <div class="testi-card glass reveal">
+            <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
+            <p class="testi-text">"The Computer Sambrani is a revolution for city apartments. Same sacred fragrance,
+              no
+              smoke alarm risks. I've gifted it to my entire building society!"</p>
+            <div class="testi-author">Priya Venkatesh</div>
+            <div class="testi-city">Bangalore, Karnataka</div>
+          </div>
+        </div>
+      </section>
+    </div><!-- /route:quality -->
+
+    <!-- ROUTE: WHOLESALE -->
+    <div class="route-page" data-route="wholesale">
+      <section id="wholesale">
+        <div class="wholesale-wrap">
+          <div class="wholesale-banner glass reveal">
+            <div>
+              <div class="wh-badge">◆ Open for Business</div>
+              <h2>Wholesale &amp; Retail Orders — Welcome!</h2>
+              <p>We extend special pricing and priority dispatch to wholesale partners — distributors, temple trusts,
+                puja
+                stores, and gift shops. Reach us via WhatsApp for instant response and custom bulk quotes.</p>
+              <div class="wh-chips">
+                <div class="wh-chip">🏪 Retail — Min 1 unit</div>
+                <div class="wh-chip">📦 Wholesale — Custom MOQ</div>
+                <div class="wh-chip">🎁 Custom Packaging Available</div>
+              </div>
+            </div>
+            <div class="wholesale-btns">
+              <a href="https://wa.me/917598465053?text=I+am+interested+in+wholesale+orders+for+Jasa+products"
+                target="_blank" class="btn-primary" style="text-align:center;">Wholesale Enquiry</a>
+              <a href="https://wa.me/917598465053?text=I+want+to+place+a+retail+order+for+Jasa+products" target="_blank"
+                class="btn-secondary" style="text-align:center;">Retail Order</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div><!-- /route:wholesale -->
+
+    <!-- ROUTE: CONTACT -->
+    <div class="route-page" data-route="contact">
+      <section id="contact" class="sec-tinted">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Get In Touch</div>
+          <h2 class="section-title">Connect With Us</h2>
+          <p class="section-desc">We respond to every enquiry with devotion and care</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card glass reveal">
+            <h3>📍 Find Us</h3>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <div class="contact-item-label">Phone / WhatsApp</div>
+                <div class="contact-item-val"><a href="tel:+917598465053">+91 75984 65053</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-val"><a href="mailto:info@jasa.in">info@jasa.in</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <div class="contact-item-label">Factory &amp; Dispatch</div>
+                <div class="contact-item-val">Bengaluru – Mysuru Highway,<br>Karnataka, India – 571 xxx</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🕐</div>
+              <div>
+                <div class="contact-item-label">Business Hours</div>
+                <div class="contact-item-val">Mon–Sat: 9:00 AM – 7:00 PM<br>Sunday: 10:00 AM – 2:00 PM</div>
+              </div>
+            </div>
+            <div style="margin-top:24px;">
+              <a href="https://wa.me/919999999999" target="_blank"
+                style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#128C7E,#25D366);color:white;padding:12px 24px;text-decoration:none;font-size:.78rem;letter-spacing:.12em;border-radius:3px;font-family:'Noto Serif',serif;transition:all .3s;"
+                onmouseover="this.style.boxShadow='0 6px 22px rgba(37,211,102,.4)'"
+                onmouseout="this.style.boxShadow='none'">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Chat on WhatsApp Now
+              </a>
+            </div>
+          </div>
+          <div class="contact-card glass reveal">
+            <h3>✍️ Send an Enquiry</h3>
+            <form onsubmit="handleSubmit(event)">
+              <div class="form-group"><label class="form-label">Your Name</label><input type="text" class="form-input"
+                  placeholder="e.g. Ramesh Kumar" required></div>
+              <div class="form-group"><label class="form-label">Phone / WhatsApp</label><input type="tel"
+                  class="form-input" placeholder="+91 98765 43210" required></div>
+              <div class="form-group"><label class="form-label">Order Type</label><select class="form-select" required>
+                  <option value="" disabled selected>Select order type</option>
+                  <option>Retail Order</option>
+                  <option>Wholesale Order</option>
+                  <option>Temple Supply</option>
+                  <option>Gift &amp; Corporate</option>
+                  <option>Product Query</option>
+                </select></div>
+              <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea"
+                  placeholder="Tell us about your requirements, preferred products, or quantity needed..."></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Enquiry 🙏</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /route:contact -->
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Jasa</div>
+        <p class="footer-tagline">"Carrying the fragrance of devotion across every sacred corner of Bharat since
+          generations."</p>
+        <div style="display:flex;gap:13px;font-size:1.3rem;">
+          <span style="opacity:.42;cursor:pointer;transition:opacity .3s;" onmouseover="this.style.opacity=1"
+            onmouseout="this.style.opacity=.42">📘</span>
+          <span style="opacity:.42;cursor:pointer;transition:opacity .3s;" onmouseover="this.style.opacity=1"
+            onmouseout="this.style.opacity=.42">📸</span>
+          <span style="opacity:.42;cursor:pointer;transition:opacity .3s;" onmouseover="this.style.opacity=1"
+            onmouseout="this.style.opacity=.42">▶️</span>
+          <span style="opacity:.42;cursor:pointer;transition:opacity .3s;" onmouseover="this.style.opacity=1"
+            onmouseout="this.style.opacity=.42">💬</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#/products">Classic Sambrani Cups</a></li>
+          <li><a href="#/products">Computer Sambrani</a></li>
+          <li><a href="#/products">Loban Dhoop Sticks</a></li>
+          <li><a href="#/products">Gugal Dhoop Cones</a></li>
+          <li><a href="#/products">Kesar Rose Sambrani</a></li>
+          <li><a href="#/products">Chandan Powder</a></li>
+          <li><a href="#/agarbatti">Marikolunthu Agarbatti</a></li>
+          <li><a href="#/agarbatti">Jasmine Agarbatti</a></li>
+          <li><a href="#/agarbatti">Rose Agarbatti</a></li>
+          <li><a href="#/agarbatti">Sandal Agarbatti</a></li>
+          <li><a href="#/agarbatti">Pineapple Agarbatti</a></li>
+          <li><a href="#/agarbatti">Natural Agarbatti</a></li>
+          <li><a href="#/agarbatti">Royal Agarbatti</a></li>
+          <li><a href="#/agarbatti">Traditional Agarbatti</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="#/quality">Why Choose Us</a></li>
+          <li><a href="#/wholesale">Wholesale Info</a></li>
+          <li><a href="#/contact">Contact Us</a></li>
+          <li><a href="https://wa.me/917598465053" target="_blank">WhatsApp Order</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 Jasa. All rights reserved. Made with 🙏 in India</div>
+      <div class="footer-om"><svg width="28" height="28" viewBox="0 0 100 100" fill="var(--gold)"><text y=".9em"
+            font-size="90" font-family="serif">ॐ</text></svg></div>
+      <div>Crafted with Devotion &amp; Tradition</div>
+    </div>
+  </footer>
+
+  <script>
+    // ─── SPA ROUTER ───
+    const routePages = document.querySelectorAll('.route-page');
+    const navRouteLinks = document.querySelectorAll('.nav-links a[data-route]');
+
+    function navigateTo(route) {
+      // Hide all route pages
+      routePages.forEach(page => {
+        page.classList.remove('route-active');
+      });
+
+      // Show the target route page
+      const target = document.querySelector(`.route-page[data-route="${route}"]`);
+      if (target) {
+        // Small delay for the fade transition
+        requestAnimationFrame(() => {
+          target.classList.add('route-active');
+          // Re-trigger reveal animations for elements in this route
+          target.querySelectorAll('.reveal').forEach((el, i) => {
+            el.classList.remove('visible');
+            setTimeout(() => el.classList.add('visible'), i * 65);
+          });
+        });
+      } else {
+        // Fallback to home if route not found
+        const home = document.querySelector('.route-page[data-route="home"]');
+        if (home) {
+          requestAnimationFrame(() => {
+            home.classList.add('route-active');
+            home.querySelectorAll('.reveal').forEach((el, i) => {
+              el.classList.remove('visible');
+              setTimeout(() => el.classList.add('visible'), i * 65);
+            });
+          });
+        }
+        window.location.hash = '#/home';
+      }
+
+      // Highlight active nav link
+      navRouteLinks.forEach(link => {
+        link.classList.remove('nav-active');
+        if (link.getAttribute('data-route') === route) {
+          link.classList.add('nav-active');
+        }
+      });
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function handleRoute() {
+      const hash = window.location.hash;
+      const route = hash.replace('#/', '') || 'home';
+      navigateTo(route);
+    }
+
+    // Listen for hash changes (back/forward and link clicks)
+    window.addEventListener('hashchange', handleRoute);
+
+    // Initial route on page load
+    if (!window.location.hash || window.location.hash === '#') {
+      window.location.hash = '#/home';
+    } else {
+      handleRoute();
+    }
+
+    // ─── NAV COMPACT ON SCROLL ───
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').style.padding = scrollY > 65 ? '10px 60px' : '15px 60px';
+    });
+
+    // ─── FORM HANDLER ───
+    function handleSubmit(e) {
+      e.preventDefault();
+      const b = e.target.querySelector('.submit-btn');
+      b.textContent = "\uD83D\uDE4F Sent! We'll contact you soon";
+      b.style.background = 'linear-gradient(135deg,#128C7E,#25D366)';
+      setTimeout(() => { b.textContent = 'Send Enquiry \uD83D\uDE4F'; b.style.background = ''; e.target.reset(); }, 3000);
+    }
+
+    // ─── HAMBURGER MENU ───
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+
+</html>

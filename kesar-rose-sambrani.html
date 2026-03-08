@@ -1439,7 +1439,7 @@
       }
     }
 
-
+    
 
     .route-page.route-active {
       display: block;
@@ -1463,24 +1463,84 @@
     #agarbatti .prod-img-col {
       min-height: 650px;
     }
+  
+    /* Product Page Specific Styles */
+    .prod-breadcrumb { font-size: .85rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; display:flex; align-items:center; gap:8px;}
+    .prod-breadcrumb a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+    .prod-breadcrumb a:hover { color: var(--saffron); }
+    
+    .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: start; }
+    
+    .prod-detail-img { min-height: 480px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .prod-thumb-row { display: flex; gap: 10px; margin-top: 15px; }
+    .prod-thumb { width: 80px; height: 80px; border-radius: 8px; background: var(--card-bg); border: 1px solid var(--border); transition: 0.2s border; overflow: hidden; }
+    
+    .prod-meta-row { margin: 25px 0; display: flex; gap: 10px; flex-wrap: wrap; }
+    .meta-pill { font-size: 0.75rem; background: rgba(200, 150, 40, 0.1); color: var(--dark-text); padding: 5px 12px; border-radius: 20px; border: 1px solid var(--gold); letter-spacing: 0.5px; }
+    
+    .prod-specs { width: 100%; border-collapse: collapse; margin-top: 30px; font-size: 0.9rem; }
+    .prod-specs tr { border-bottom: 1px solid var(--border); }
+    .prod-specs td { padding: 12px 0; color: var(--mid-text); }
+    .prod-specs td:first-child { font-weight: 600; color: var(--dark-text); width: 35%; }
+    
+    .use-step-card-row { display: flex; gap: 30px; max-width: 1100px; margin: 0 auto; }
+    .use-step-card { flex: 1; min-width: 250px; padding: 40px 30px; border-radius: 12px; border: 1px solid var(--border); text-align: center; }
+    .use-step-icon { width: 50px; height: 50px; background: rgba(200,150,20,0.1); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.2rem; font-weight: bold; border: 1px solid var(--gold); }
+    
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; }
+    
+    .btn-secondary { background: transparent; color: var(--dark-text); border: 1px solid var(--gold); padding: 14px 42px; font-family: 'Noto Serif', serif; font-size: .79rem; letter-spacing: .2em; text-transform: uppercase; cursor: pointer; transition: all .3s; text-decoration: none; display: inline-flex; justify-content: center; align-items: center; }
+    .btn-secondary:hover { background: rgba(200,150,20,0.05); transform: translateY(-3px); box-shadow: 0 10px 30px var(--card-shadow); }
+
+    @media (max-width: 900px) {
+        .product-detail-grid { grid-template-columns: 1fr; }
+        .use-step-card-row { flex-direction: column; }
+        .related-grid { grid-template-columns: 1fr; }
+    }
+    
   </style>
 
   <style>
     /* Scroll Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  
+    /* Product Page Specific Styles */
+    .prod-breadcrumb { font-size: .85rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; display:flex; align-items:center; gap:8px;}
+    .prod-breadcrumb a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+    .prod-breadcrumb a:hover { color: var(--saffron); }
+    
+    .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: start; }
+    
+    .prod-detail-img { min-height: 480px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .prod-thumb-row { display: flex; gap: 10px; margin-top: 15px; }
+    .prod-thumb { width: 80px; height: 80px; border-radius: 8px; background: var(--card-bg); border: 1px solid var(--border); transition: 0.2s border; overflow: hidden; }
+    
+    .prod-meta-row { margin: 25px 0; display: flex; gap: 10px; flex-wrap: wrap; }
+    .meta-pill { font-size: 0.75rem; background: rgba(200, 150, 40, 0.1); color: var(--dark-text); padding: 5px 12px; border-radius: 20px; border: 1px solid var(--gold); letter-spacing: 0.5px; }
+    
+    .prod-specs { width: 100%; border-collapse: collapse; margin-top: 30px; font-size: 0.9rem; }
+    .prod-specs tr { border-bottom: 1px solid var(--border); }
+    .prod-specs td { padding: 12px 0; color: var(--mid-text); }
+    .prod-specs td:first-child { font-weight: 600; color: var(--dark-text); width: 35%; }
+    
+    .use-step-card-row { display: flex; gap: 30px; max-width: 1100px; margin: 0 auto; }
+    .use-step-card { flex: 1; min-width: 250px; padding: 40px 30px; border-radius: 12px; border: 1px solid var(--border); text-align: center; }
+    .use-step-icon { width: 50px; height: 50px; background: rgba(200,150,20,0.1); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.2rem; font-weight: bold; border: 1px solid var(--gold); }
+    
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; }
+    
+    .btn-secondary { background: transparent; color: var(--dark-text); border: 1px solid var(--gold); padding: 14px 42px; font-family: 'Noto Serif', serif; font-size: .79rem; letter-spacing: .2em; text-transform: uppercase; cursor: pointer; transition: all .3s; text-decoration: none; display: inline-flex; justify-content: center; align-items: center; }
+    .btn-secondary:hover { background: rgba(200,150,20,0.05); transform: translateY(-3px); box-shadow: 0 10px 30px var(--card-shadow); }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    @media (max-width: 900px) {
+        .product-detail-grid { grid-template-columns: 1fr; }
+        .use-step-card-row { flex-direction: column; }
+        .related-grid { grid-template-columns: 1fr; }
     }
+    
   </style>
-</head>
-
-<body>
+</head><body>
 
 
 
@@ -1497,22 +1557,21 @@
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
       </svg>
     </a>
-  </div>
-  <nav id="navbar">
+  </div><nav id="navbar">
     <a href="index.html" class="nav-logo">Jasa</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-active">Home</a></li>
+      <li><a href="index.html" >Home</a></li>
       <li class="dropdown">
-        <a href="dhoop.html" class="dropbtn">Products <i class="fa fa-caret-down"></i></a>
+        <a href="dhoop.html" class="nav-active" class="dropbtn">Products <i class="fa fa-caret-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="dhoop.html">Dhoop</a></li>
-          <li><a href="agarbatti.html">Agarbatti</a></li>
+          <li><a href="dhoop.html" class="nav-active" >Dhoop</a></li>
+          <li><a href="agarbatti.html" >Agarbatti</a></li>
         </ul>
       </li>
       <li><a href="about.html">Our Story</a></li>
-      <li><a href="quality.html">Quality</a></li>
-      <li><a href="wholesale.html">Wholesale</a></li>
-      <li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
+      <li><a href="quality.html" >Quality</a></li>
+      <li><a href="wholesale.html" >Wholesale</a></li>
+      <li><a href="contact.html"  class="nav-cta">Enquire Now</a></li>
     </ul>
     <div class="hamburger">
       <span></span>
@@ -1520,54 +1579,133 @@
       <span></span>
     </div>
   </nav>
-  <main>
-    <section class="hero" id="home"
-      style="display:grid;grid-template-columns:1fr 1fr;align-items:center;text-align:left;gap:40px;padding:120px 60px 70px;">
-      <!-- Left: Hero Text -->
-      <div>
-        <div class="hero-eyebrow" style="justify-content:flex-start;">Sacred Fragrances of Bharat</div>
-        <h1 class="hero-title">
-          Where Divinity
-          <span class="highlight">Meets Fragrance</span>
-        </h1>
-        <p class="hero-subtitle">Handcrafted Samabrani(Dhoop) &amp; Agarbattis offerings — born from ancient temple
-          traditions,
-          perfected for modern devotion</p>
-        <div class="hero-btns" style="justify-content:flex-start;">
-          <a href="dhoop.html" class="btn-primary">Explore Products</a>
-          <a href="https://wa.me/917598465053" target="_blank" class="btn-secondary">🛒 Order Now</a>
+<main>
+
+    <!-- PRODUCT HERO -->
+    <section class="hero reveal" style="padding-top:160px; min-height:50vh; display:flex; align-items:center;">
+        <div class="hero-content">
+            <div class="prod-breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <a href="dhoop.html">Dhoop</a> <span>/</span> <span style="color:var(--dark-text);">Kesar Rose Sambrani</span>
+            </div>
+            <div class="hero-eyebrow" style="margin-top:20px; margin-bottom:15px;display:flex;align-items:center;justify-content:center;gap:14px;color:var(--saffron);font-size:.65rem;letter-spacing:.42em;text-transform:uppercase;">Floral Series</div>
+            <h1 class="hero-title" style="font-size: clamp(2rem, 5vw, 4.5rem); margin-bottom:20px;">Kesar Rose Sambrani</h1>
+            <p class="hero-subtitle" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size:1.2rem; color:var(--light-text); font-weight:700; margin-bottom:35px;">Saffron & Rose Petal Infusion</p>
+            <div class="hero-btns" style="margin-top: 30px;">
+                <a href="https://wa.me/917598465053?text=I+want+to+order+Kesar+Rose+Sambrani" target="_blank" class="btn-primary" style="background: linear-gradient(135deg, #128C7E, #25D366); box-shadow: 0 4px 15px rgba(18,140,126,0.3); border:none;">Order on WhatsApp</a>
+                <a href="dhoop.html" class="btn-secondary">Back to All Products</a>
+            </div>
         </div>
-      </div>
-      <!-- Right: Product Image -->
-      <div style="display:flex;align-items:center;justify-content:center;">
-        <img src="./public/001.png" alt="Jasa Product Showcase"
-          style="width:120%;max-width:800px;border-radius:13px;opacity:1;">
-      </div>
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee-strip">
-      <div class="marquee-track">
-        <span class="marquee-item">Premium Sambrani Cups</span><span class="marquee-item">Computer
-          Sambrani</span><span class="marquee-item">Loban Dhoop</span><span class="marquee-item">Gugal Dhoop
-          Sticks</span><span class="marquee-item">Kesar Rose Sambrani</span><span class="marquee-item">Chandan
-          Powder</span><span class="marquee-item">Marikolunthu Agarbatti</span><span class="marquee-item">Jasmine
-          Agarbatti</span><span class="marquee-item">Rose Agarbatti</span><span class="marquee-item">Sandal
-          Agarbatti</span><span class="marquee-item">Pineapple Agarbatti</span><span class="marquee-item">Natural
-          Agarbatti</span><span class="marquee-item">Royal Agarbatti</span><span class="marquee-item">Traditional
-          Agarbatti</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan
-          India Delivery</span>
-        <span class="marquee-item">Premium Sambrani Cups</span><span class="marquee-item">Computer
-          Sambrani</span><span class="marquee-item">Loban Dhoop</span><span class="marquee-item">Gugal Dhoop
-          Sticks</span><span class="marquee-item">Kesar Rose Sambrani</span><span class="marquee-item">Chandan
-          Powder</span><span class="marquee-item">Marikolunthu Agarbatti</span><span class="marquee-item">Jasmine
-          Agarbatti</span><span class="marquee-item">Rose Agarbatti</span><span class="marquee-item">Sandal
-          Agarbatti</span><span class="marquee-item">Pineapple Agarbatti</span><span class="marquee-item">Natural
-          Agarbatti</span><span class="marquee-item">Royal Agarbatti</span><span class="marquee-item">Traditional
-          Agarbatti</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan
-          India Delivery</span>
-      </div>
-    </div><!-- marquee-strip -->
+    <!-- PRODUCT DETAILS -->
+    <section>
+        <div class="product-detail-grid">
+            <div class="product-img-panel reveal">
+                <div class="prod-detail-img">
+                    <img src="public/005.png" alt="Kesar Rose Sambrani" style="width:100%;height:100%;object-fit:cover;border-radius:16px;display:block;">
+                </div>
+                <!-- Optional thumbs removed for purity -->
+            </div>
+            
+            <div class="product-info-panel reveal" style="transition-delay: 0.1s;">
+                <h2 style="font-family:'Cinzel Decorative',serif;font-size:2.2rem;color:var(--dark-text);margin-bottom:8px;">Kesar Rose Sambrani</h2>
+                <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--light-text);margin-bottom:25px;font-weight:700;">Saffron & Rose Petal Infusion</div>
+                
+                <div class="prod-divider" style="margin-bottom:25px; width:60px; height:1px; background:var(--gold);"></div>
+                
+                <div class="prod-qualities" style="margin-bottom:25px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <span class="q-tag" style="font-size:0.7rem; padding:4px 12px; border:1px solid var(--gold); border-radius:20px; text-transform:uppercase; letter-spacing:1px;">Kesar Infused</span><span class="q-tag" style="font-size:0.7rem; padding:4px 12px; border:1px solid var(--gold); border-radius:20px; text-transform:uppercase; letter-spacing:1px;">Gift Box</span><span class="q-tag" style="font-size:0.7rem; padding:4px 12px; border:1px solid var(--gold); border-radius:20px; text-transform:uppercase; letter-spacing:1px;">Festive Special</span>
+                </div>
+                
+                <div class="prod-meta-row">
+                    <span class="meta-pill">Retail & Wholesale</span>
+                    <span class="meta-pill">Pan India Delivery</span>
+                    <span class="meta-pill">Custom Bulk Orders</span>
+                </div>
+                
+                <p style="font-size:.95rem;color:var(--mid-text);line-height:1.8;margin-bottom:20px;">An indulgent, regal blend combining the fiery warmth of pure kesar (saffron) with the sweet devotion of Indian rose petals. This sambrani cup creates a luxurious, uplifting fragrance reserved for special prayers and celebrations.</p>
+                <p style="font-size:.95rem;color:var(--mid-text);line-height:1.8;margin-bottom:35px;">Often chosen for weddings, housewarmings, and Diwali poojas, this blend carries the essence of abundance. The delicate saffron notes linger long after the cup has finished burning.</p>
+                
+                <h3 style="font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--dark-text);margin-bottom:15px; border-bottom:1px solid var(--border); padding-bottom:10px;">Specifications</h3>
+                <table class="prod-specs">
+                    <tr><td>Fragrance Type</td><td>Floral / Saffron-Rose</td></tr>
+                    <tr><td>Burn Time</td><td>15–18 min per cup</td></tr>
+                    <tr><td>Pack Sizes</td><td>10 cups, 30 cups</td></tr>
+                    <tr><td>Best For</td><td>Weddings, festivals, gifting, special puja</td></tr>
+                    <tr><td>Key Ingredient</td><td>Saffron strands + Rose petals</td></tr>
+                </table>
+                
+                <div style="margin-top: 45px;">
+                    <a href="https://wa.me/917598465053?text=I+want+to+order+Kesar+Rose+Sambrani" target="_blank" class="btn-primary" style="display:block;width:100%;text-align:center;font-size:.9rem;padding:18px;">Enquire / Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RITUAL GUIDE -->
+    <section class="reveal" style="background:linear-gradient(to bottom, transparent, rgba(200,150,50,0.05), transparent);">
+        <div class="section-header">
+            <div class="section-eyebrow">Ritual Guide</div>
+            <h2 class="section-title">How to Use Kesar</h2>
+        </div>
+        <div class="use-step-card-row">
+            <div class="use-step-card glass reveal">
+                <div class="use-step-icon">1</div>
+                <h3 style="font-family:'Cinzel Decorative',serif;color:var(--dark-text);margin-bottom:12px;">Prepare</h3>
+                <p style="color:var(--mid-text);font-size:0.95rem;line-height:1.6;">Light the tip carefully until it glows red carefully. Place it securely on a fire-proof stand.</p>
+            </div>
+            <div class="use-step-card glass reveal" style="transition-delay:0.15s;">
+                <div class="use-step-icon">2</div>
+                <h3 style="font-family:'Cinzel Decorative',serif;color:var(--dark-text);margin-bottom:12px;">Intend</h3>
+                <p style="color:var(--mid-text);font-size:0.95rem;line-height:1.6;">Close your eyes and breathe deeply. Set your prayer, manifestation, or personal intention.</p>
+            </div>
+            <div class="use-step-card glass reveal" style="transition-delay:0.3s;">
+                <div class="use-step-icon">3</div>
+                <h3 style="font-family:'Cinzel Decorative',serif;color:var(--dark-text);margin-bottom:12px;">Offer</h3>
+                <p style="color:var(--mid-text);font-size:0.95rem;line-height:1.6;">Gently guide the sacred smoke around your space, letting the aroma elevate the environment's energy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RELATED PRODUCTS -->
+    <section>
+        <div class="section-header reveal">
+            <div class="section-eyebrow">You May Also Like</div>
+            <h2 class="section-title">Explore More Sacred Fragrances</h2>
+        </div>
+        <div class="related-grid reveal">
+            
+            <div class="pillar-card glass" style="padding:30px; border-radius:12px; text-align:center;">
+                <h3 style="font-family:'Cinzel Decorative',serif;font-size:1.3rem;margin-bottom:10px;color:var(--dark-text)">Classic Sambrani Cups</h3>
+                <p style="font-size:.9rem;color:var(--mid-text);margin-bottom:20px;">ಸಾಂಬ್ರಾಣಿ ಕಪ್ — Benzoin Resin Blend</p>
+                <a href="classic-sambrani.html" style="text-decoration:none; color:var(--saffron); font-size:0.8rem; letter-spacing:1px; text-transform:uppercase; border-bottom:1px solid var(--saffron); padding-bottom:3px;">View Product</a>
+            </div>
+        
+            <div class="pillar-card glass" style="padding:30px; border-radius:12px; text-align:center;">
+                <h3 style="font-family:'Cinzel Decorative',serif;font-size:1.3rem;margin-bottom:10px;color:var(--dark-text)">Computer Sambrani</h3>
+                <p style="font-size:.9rem;color:var(--mid-text);margin-bottom:20px;">Electric Dhoop Diffuser System</p>
+                <a href="computer-sambrani.html" style="text-decoration:none; color:var(--saffron); font-size:0.8rem; letter-spacing:1px; text-transform:uppercase; border-bottom:1px solid var(--saffron); padding-bottom:3px;">View Product</a>
+            </div>
+        
+            <div class="pillar-card glass" style="padding:30px; border-radius:12px; text-align:center;">
+                <h3 style="font-family:'Cinzel Decorative',serif;font-size:1.3rem;margin-bottom:10px;color:var(--dark-text)">Jasmine Agarbatti</h3>
+                <p style="font-size:.9rem;color:var(--mid-text);margin-bottom:20px;">Mallipoo — South Indian Jasmine Sticks</p>
+                <a href="jasmine.html" style="text-decoration:none; color:var(--saffron); font-size:0.8rem; letter-spacing:1px; text-transform:uppercase; border-bottom:1px solid var(--saffron); padding-bottom:3px;">View Product</a>
+            </div>
+        
+        </div>
+    </section>
+
+    <!-- WHOLESALE BANNER -->
+    <section class="reveal">
+        <div class="wholesale-banner glass" style="max-width:1100px;margin:0 auto;padding:60px 40px;text-align:center;border-radius:16px;">
+            <div class="section-eyebrow">Partner with Jasa</div>
+            <h2 class="section-title" style="margin-bottom:15px;font-size:2rem;">Wholesale & Bulk Supplies</h2>
+            <p style="color:var(--mid-text);margin-bottom:30px;font-size:1rem;max-width:600px;margin-left:auto;margin-right:auto;">Supplying temples, ashrams, and retail stores across India with premium quality at wholesale prices.</p>
+            <a href="https://wa.me/917598465053?text=I+want+wholesale+details" target="_blank" class="btn-primary">Request Wholesale Catalog</a>
+        </div>
+    </section>
+    
 
   </main>
   <footer>
@@ -1634,7 +1772,7 @@
     function handleSubmit(e) {
       e.preventDefault();
       const b = e.target.querySelector('.submit-btn');
-      if (b) {
+      if(b) {
         b.textContent = "🙏 Sent! We'll contact you soon";
         b.style.background = 'linear-gradient(135deg,#128C7E,#25D366)';
         setTimeout(() => { b.textContent = 'Send Enquiry 🙏'; b.style.background = ''; e.target.reset(); }, 3000);
@@ -1670,7 +1808,7 @@
     }, { rootMargin: '0px 0px -50px 0px' });
 
     revealElements.forEach(el => revealObserver.observe(el));
-
+    
     // Quick reveal for elements already in viewport on load
     setTimeout(() => {
       document.querySelectorAll('.hero-eyebrow, .hero-title, .hero-subtitle, .hero-btns').forEach(el => {
@@ -1680,5 +1818,4 @@
     }, 100);
   </script>
 </body>
-
 </html>

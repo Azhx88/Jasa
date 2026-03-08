@@ -1439,7 +1439,7 @@
       }
     }
 
-
+    
 
     .route-page.route-active {
       display: block;
@@ -1467,20 +1467,10 @@
 
   <style>
     /* Scroll Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
-</head>
-
-<body>
+</head><body>
 
 
 
@@ -1497,22 +1487,21 @@
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
       </svg>
     </a>
-  </div>
-  <nav id="navbar">
+  </div><nav id="navbar">
     <a href="index.html" class="nav-logo">Jasa</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-active">Home</a></li>
+      <li><a href="index.html" >Home</a></li>
       <li class="dropdown">
-        <a href="dhoop.html" class="dropbtn">Products <i class="fa fa-caret-down"></i></a>
+        <a href="dhoop.html" class="nav-active" class="dropbtn">Products <i class="fa fa-caret-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="dhoop.html">Dhoop</a></li>
-          <li><a href="agarbatti.html">Agarbatti</a></li>
+          <li><a href="dhoop.html" class="nav-active" >Dhoop</a></li>
+          <li><a href="agarbatti.html" >Agarbatti</a></li>
         </ul>
       </li>
       <li><a href="about.html">Our Story</a></li>
-      <li><a href="quality.html">Quality</a></li>
-      <li><a href="wholesale.html">Wholesale</a></li>
-      <li><a href="contact.html" class="nav-cta">Enquire Now</a></li>
+      <li><a href="quality.html" >Quality</a></li>
+      <li><a href="wholesale.html" >Wholesale</a></li>
+      <li><a href="contact.html"  class="nav-cta">Enquire Now</a></li>
     </ul>
     <div class="hamburger">
       <span></span>
@@ -1520,54 +1509,211 @@
       <span></span>
     </div>
   </nav>
-  <main>
-    <section class="hero" id="home"
-      style="display:grid;grid-template-columns:1fr 1fr;align-items:center;text-align:left;gap:40px;padding:120px 60px 70px;">
-      <!-- Left: Hero Text -->
-      <div>
-        <div class="hero-eyebrow" style="justify-content:flex-start;">Sacred Fragrances of Bharat</div>
-        <h1 class="hero-title">
-          Where Divinity
-          <span class="highlight">Meets Fragrance</span>
-        </h1>
-        <p class="hero-subtitle">Handcrafted Samabrani(Dhoop) &amp; Agarbattis offerings — born from ancient temple
-          traditions,
-          perfected for modern devotion</p>
-        <div class="hero-btns" style="justify-content:flex-start;">
-          <a href="dhoop.html" class="btn-primary">Explore Products</a>
-          <a href="https://wa.me/917598465053" target="_blank" class="btn-secondary">🛒 Order Now</a>
+<main style="padding-top:100px">
+<section id="products">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Our Sacred Collection</div>
+          <h2 class="section-title">Premium Dhoop &amp; Sambrani</h2>
+          <p class="section-desc">Each product is a prayer — blended with devotion, crafted with tradition</p>
         </div>
-      </div>
-      <!-- Right: Product Image -->
-      <div style="display:flex;align-items:center;justify-content:center;">
-        <img src="./public/001.png" alt="Jasa Product Showcase"
-          style="width:120%;max-width:800px;border-radius:13px;opacity:1;">
-      </div>
-    </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee-strip">
-      <div class="marquee-track">
-        <span class="marquee-item">Premium Sambrani Cups</span><span class="marquee-item">Computer
-          Sambrani</span><span class="marquee-item">Loban Dhoop</span><span class="marquee-item">Gugal Dhoop
-          Sticks</span><span class="marquee-item">Kesar Rose Sambrani</span><span class="marquee-item">Chandan
-          Powder</span><span class="marquee-item">Marikolunthu Agarbatti</span><span class="marquee-item">Jasmine
-          Agarbatti</span><span class="marquee-item">Rose Agarbatti</span><span class="marquee-item">Sandal
-          Agarbatti</span><span class="marquee-item">Pineapple Agarbatti</span><span class="marquee-item">Natural
-          Agarbatti</span><span class="marquee-item">Royal Agarbatti</span><span class="marquee-item">Traditional
-          Agarbatti</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan
-          India Delivery</span>
-        <span class="marquee-item">Premium Sambrani Cups</span><span class="marquee-item">Computer
-          Sambrani</span><span class="marquee-item">Loban Dhoop</span><span class="marquee-item">Gugal Dhoop
-          Sticks</span><span class="marquee-item">Kesar Rose Sambrani</span><span class="marquee-item">Chandan
-          Powder</span><span class="marquee-item">Marikolunthu Agarbatti</span><span class="marquee-item">Jasmine
-          Agarbatti</span><span class="marquee-item">Rose Agarbatti</span><span class="marquee-item">Sandal
-          Agarbatti</span><span class="marquee-item">Pineapple Agarbatti</span><span class="marquee-item">Natural
-          Agarbatti</span><span class="marquee-item">Royal Agarbatti</span><span class="marquee-item">Traditional
-          Agarbatti</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan
-          India Delivery</span>
-      </div>
-    </div><!-- marquee-strip -->
+        <div class="products-list">
+
+          <!-- P1 -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-1" style="position:relative;">
+                <img src="./public/002.png" alt="Classic Sambrani Cups"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img">Bestseller</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Traditional Cup Series</div>
+              <h3 class="prod-name"><a href="classic-sambrani.html" class="prod-name-link">Classic
+                  Sambrani Cups</a></h3>
+              <div class="prod-sub">ಸಾಂಬ್ರಾಣಿ ಕಪ್ — Benzoin Resin Blend</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">100% Natural</span><span class="q-tag">Long
+                  Burning</span><span class="q-tag">Temple Grade</span></div>
+              <p class="prod-desc">Rich benzoin resin packed in traditional clay cups — releases thick, fragrant white
+                smoke that purifies homes, temples &amp; sacred spaces. Burns up to 20 minutes per cup. Trusted by
+                households and temples across India for generations.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Classic+Sambrani+Cups" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P2 flip -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-2" style="position:relative;">
+                <img src="./public/003.png" alt="Computer Sambrani"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#1a8c4e,#2ecc71);">New Era</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Modern Series</div>
+              <h3 class="prod-name"><a href="computer-sambrani.html" class="prod-name-link">Computer
+                  Sambrani</a></h3>
+              <div class="prod-sub">Electric Dhoop Diffuser System</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Smokeless Option</span><span class="q-tag">Electric
+                  Safe</span><span class="q-tag">Modern Homes</span></div>
+              <p class="prod-desc">Revolutionary electric sambrani designed for apartments, offices &amp;
+                smoke-sensitive
+                spaces. Specially formulated resin discs work seamlessly with electric burners — ancient fragrance,
+                modern
+                convenience. Perfect for today's urban devotee.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Computer+Sambrani" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P3 -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-3" style="position:relative;">
+                <img src="./public/004.png" alt="Loban Dhoop Sticks"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#8B1A2A,#C9941A);">Premium</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Resin Collection</div>
+              <h3 class="prod-name"><a href="loban-dhoop.html" class="prod-name-link">Loban Dhoop
+                  Sticks</a></h3>
+              <div class="prod-sub">Pure Frankincense — Benzoin Blend</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Anti-Bacterial</span><span class="q-tag">Vastu
+                  Friendly</span><span class="q-tag">Slow Burn</span></div>
+              <p class="prod-desc">Pure loban (benzoin) blended with sacred herbs — scientifically proven to purify
+                air.
+                Each stick burns for 45+ minutes, filling spaces with sacred, calming fragrance used in temples for
+                centuries. Ideal for daily puja and meditation.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Loban+Dhoop+Sticks" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P4 flip -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-4" style="position:relative;">
+                <img src="./public/005.png" alt="Kesar Rose Sambrani"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#7B1FA2,#C9941A);">Floral</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Floral Series</div>
+              <h3 class="prod-name"><a href="kesar-rose-sambrani.html" class="prod-name-link">Kesar Rose
+                  Sambrani</a></h3>
+              <div class="prod-sub">Saffron &amp; Rose Petal Infusion</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Kesar Infused</span><span class="q-tag">Gift
+                  Worthy</span><span class="q-tag">Pooja Special</span></div>
+              <p class="prod-desc">Rare saffron strands and dried rose petals blended into premium sambrani cups. An
+                indulgent fragrance for special poojas, weddings, and gifting — the fragrance of devotion and luxury
+                combined. A prized offering for every festive occasion.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Kesar+Rose+Sambrani" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P5 -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-5" style="position:relative;">
+                <img src="./public/006.png" alt="Gugal Dhoop Cones"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#2E7D32,#A5D6A7);color:#1a1a1a;">
+                  Herbal</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Herbal Series</div>
+              <h3 class="prod-name"><a href="gugal-dhoop-cones.html" class="prod-name-link">Gugal Dhoop
+                  Cones</a></h3>
+              <div class="prod-sub">Sacred Commiphora Mukul Blend</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Ayurvedic</span><span class="q-tag">Air
+                  Purifier</span><span class="q-tag">Stress Relief</span></div>
+              <p class="prod-desc">Gugal (Commiphora wightii) — the sacred resin of Vedic scriptures. Cone format for
+                easy
+                burning, deep earthy aroma that balances energy, relieves stress, and sanctifies the atmosphere. A
+                staple
+                for serious spiritual practice and temple supply.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Gugal+Dhoop+Cones" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- P6 flip -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-6" style="position:relative;">
+                <img src="./public/007.png" alt="Chandan Sambrani Powder"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#5D4037,#C9941A);">Heritage</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Wood Series</div>
+              <h3 class="prod-name"><a href="chandan-sambrani-powder.html" class="prod-name-link">Chandan
+                  Sambrani Powder</a></h3>
+              <div class="prod-sub">Sandalwood &amp; Sambrani Fusion</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Pure Sandalwood</span><span class="q-tag">Meditation
+                  Grade</span><span class="q-tag">Bulk Packing</span></div>
+              <p class="prod-desc">Ground sandalwood bark fused with pure sambrani resin — the most sacred fragrance
+                combination in Hindu tradition. Perfect for daily puja, meditation halls &amp; bulk temple supply.
+                Available in wholesale quantities with custom packaging options.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Chandan+Sambrani+Powder"
+                  target="_blank" class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
   </main>
   <footer>
@@ -1634,7 +1780,7 @@
     function handleSubmit(e) {
       e.preventDefault();
       const b = e.target.querySelector('.submit-btn');
-      if (b) {
+      if(b) {
         b.textContent = "🙏 Sent! We'll contact you soon";
         b.style.background = 'linear-gradient(135deg,#128C7E,#25D366)';
         setTimeout(() => { b.textContent = 'Send Enquiry 🙏'; b.style.background = ''; e.target.reset(); }, 3000);
@@ -1670,7 +1816,7 @@
     }, { rootMargin: '0px 0px -50px 0px' });
 
     revealElements.forEach(el => revealObserver.observe(el));
-
+    
     // Quick reveal for elements already in viewport on load
     setTimeout(() => {
       document.querySelectorAll('.hero-eyebrow, .hero-title, .hero-subtitle, .hero-btns').forEach(el => {
@@ -1680,5 +1826,4 @@
     }, 100);
   </script>
 </body>
-
 </html>
