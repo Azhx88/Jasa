@@ -1373,6 +1373,15 @@
     .nav-links a.nav-active::after {
       transform: scaleX(1);
     }
+
+    /* AGARBATTI — taller rows to show full product images */
+    #agarbatti .prod-row {
+      min-height: 580px;
+    }
+
+    #agarbatti .prod-img-col {
+      min-height: 650px;
+    }
   </style>
 </head>
 
@@ -1400,7 +1409,11 @@
     <a href="#/home" class="nav-logo">Jasa</a>
     <ul class="nav-links">
       <li><a href="#/home" data-route="home">Home</a></li>
-      <li><a href="#/products" data-route="products">Products</a></li>
+      <li><a href="#/products" data-route="products">Dhoop</a></li>
+      <li><a href="#/agarbatti" data-route="agarbatti"><svg width="13" height="13" viewBox="0 0 24 24"
+            fill="currentColor" style="vertical-align:middle;margin-right:4px;">
+            <path d="M12 2c0 0-1 4-1 8s1 6 1 8M10 4c-2 1-4 3-4 7M14 4c2 1 4 3 4 7M8 18c1 1 2.5 2 4 2s3-1 4-2" />
+          </svg>Agarbatti</a></li>
       <li><a href="#/our-story" data-route="our-story">Our Story</a></li>
       <li><a href="#/quality" data-route="quality">Quality</a></li>
       <li><a href="#/wholesale" data-route="wholesale">Wholesale</a></li>
@@ -1448,13 +1461,21 @@
           <span class="marquee-item">Premium Sambrani Cups</span><span class="marquee-item">Computer
             Sambrani</span><span class="marquee-item">Loban Dhoop</span><span class="marquee-item">Gugal Dhoop
             Sticks</span><span class="marquee-item">Kesar Rose Sambrani</span><span class="marquee-item">Chandan
-            Powder</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan India
-            Delivery</span>
+            Powder</span><span class="marquee-item">Marikolunthu Agarbatti</span><span class="marquee-item">Jasmine
+            Agarbatti</span><span class="marquee-item">Rose Agarbatti</span><span class="marquee-item">Sandal
+            Agarbatti</span><span class="marquee-item">Pineapple Agarbatti</span><span class="marquee-item">Natural
+            Agarbatti</span><span class="marquee-item">Royal Agarbatti</span><span class="marquee-item">Traditional
+            Agarbatti</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan
+            India Delivery</span>
           <span class="marquee-item">Premium Sambrani Cups</span><span class="marquee-item">Computer
             Sambrani</span><span class="marquee-item">Loban Dhoop</span><span class="marquee-item">Gugal Dhoop
             Sticks</span><span class="marquee-item">Kesar Rose Sambrani</span><span class="marquee-item">Chandan
-            Powder</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan India
-            Delivery</span>
+            Powder</span><span class="marquee-item">Marikolunthu Agarbatti</span><span class="marquee-item">Jasmine
+            Agarbatti</span><span class="marquee-item">Rose Agarbatti</span><span class="marquee-item">Sandal
+            Agarbatti</span><span class="marquee-item">Pineapple Agarbatti</span><span class="marquee-item">Natural
+            Agarbatti</span><span class="marquee-item">Royal Agarbatti</span><span class="marquee-item">Traditional
+            Agarbatti</span><span class="marquee-item">Wholesale Orders Welcome</span><span class="marquee-item">Pan
+            India Delivery</span>
         </div>
       </div><!-- marquee-strip -->
     </div><!-- /route:home -->
@@ -1661,6 +1682,266 @@
       </section>
     </div><!-- /route:products -->
 
+    <!-- ROUTE: AGARBATTI -->
+    <div class="route-page" data-route="agarbatti">
+      <section id="agarbatti">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Agarbatti Collection</div>
+          <h2 class="section-title">Sacred Sticks. Divine Fragrance.</h2>
+          <p class="section-desc">Eight sacred fragrances — handrolled with devotion, rooted in ancient tradition</p>
+        </div>
+
+        <div class="products-list">
+
+          <!-- A1 — Marikolunthu Agarbatti (normal, tint-1) -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-1" style="position:relative;">
+                <img src="public/111.png" alt="Marikolunthu Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#2D6B1A,#6DB33F);">Herbal</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Herbal Series</div>
+              <div class="prod-name">Marikolunthu Agarbatti</div>
+              <div class="prod-sub">Plectranthus amboinicus — Sacred Herb Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Herbal Blend</span><span class="q-tag">Temple
+                  Grade</span><span class="q-tag">Long Lasting</span></div>
+              <p class="prod-desc">Marikolunthu — the sacred Indian borage — is a revered herb in South Indian temple
+                traditions. Its warm, earthy, camphor-like fragrance purifies spaces, invokes blessings, and deepens
+                meditation. Handrolled with pure herb extract and natural binding. A true offering of nature's sanctity.
+              </p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Marikolunthu+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A2 — Jasmine Agarbatti (flip, tint-2) -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-2" style="position:relative;">
+                <img src="public/222.png" alt="Jasmine Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#7B1FA2,#F8BBD0);color:#1a1a1a;">
+                  Floral</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Floral Series</div>
+              <div class="prod-name">Jasmine Agarbatti</div>
+              <div class="prod-sub">Mallipoo — South Indian Jasmine Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Pure Floral</span><span
+                  class="q-tag">Devotional</span><span class="q-tag">Daily Puja</span></div>
+              <p class="prod-desc">The fragrance of South India's most beloved bloom — pure Mallipoo jasmine. Each stick
+                releases a rich, sweet, devotional fragrance that has graced temple offerings and bridal ceremonies for
+                centuries. Ideal for morning and evening puja, meditation, and sacred rituals.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Jasmine+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A3 — Rose Agarbatti (normal, tint-3) -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-3" style="position:relative;">
+                <img src="public/333.png" alt="Rose Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#C62828,#E8720C);">Floral</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Floral Series</div>
+              <div class="prod-name">Rose Agarbatti</div>
+              <div class="prod-sub">Gulab — Rose Petal Incense Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Pure Rose</span><span class="q-tag">Romantic</span><span
+                  class="q-tag">Daily Use</span></div>
+              <p class="prod-desc">Crafted from hand-picked rose petals blended with a natural masala base — our Rose
+                Agarbatti fills any space with the warm, timeless fragrance of the Gulab. Beloved for daily puja,
+                offerings to deities, and creating a serene atmosphere in homes and temples.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Rose+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A4 — Sandal Agarbatti (flip, tint-4) -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-4" style="position:relative;">
+                <img src="public/444.png" alt="Sandal Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#5D4037,#C9941A);">Premium</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Classic Series</div>
+              <div class="prod-name">Sandal Agarbatti</div>
+              <div class="prod-sub">Chandan — Pure Sandalwood Incense Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Pure Sandalwood</span><span class="q-tag">Temple
+                  Grade</span><span class="q-tag">Premium</span></div>
+              <p class="prod-desc">Sandalwood — the most sacred fragrance in Hindu tradition. Our Chandan Agarbatti is
+                made with authentic Mysore sandalwood extract, offering a deep, creamy, meditative aroma that has
+                accompanied prayers for millennia. Every stick is a bridge between the earthly and the divine.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Sandal+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A5 — Pineapple Agarbatti (normal, tint-5) -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-5" style="position:relative;">
+                <img src="public/555.png" alt="Pineapple Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#F9A825,#43A047);color:#1a1a1a;">
+                  Fresh</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Fruity Series</div>
+              <div class="prod-name">Pineapple Agarbatti</div>
+              <div class="prod-sub">Tropical — Pineapple Incense Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Tropical Scent</span><span class="q-tag">Fresh</span><span
+                  class="q-tag">Uplifting</span></div>
+              <p class="prod-desc">A burst of tropical freshness — Pineapple Agarbatti brings an uplifting, energizing
+                fragrance that brightens living spaces and mood. Perfect for homes, gifting, and festive occasions. A
+                joyful, modern fragrance that blends beautifully with South India's vibrant spirit.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Pineapple+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A6 — Natural Agarbatti (flip, tint-6) -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-6" style="position:relative;">
+                <img src="public/666.png" alt="Natural Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#1a8c4e,#2ecc71);">Pure</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Pure Series</div>
+              <div class="prod-name">Natural Agarbatti</div>
+              <div class="prod-sub">Masala Sticks — 100% Natural Blend</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Zero Chemicals</span><span
+                  class="q-tag">Eco-Friendly</span><span class="q-tag">Handrolled</span></div>
+              <p class="prod-desc">Zero synthetics, zero artificial fragrance — just nature in its purest form.
+                Handrolled using the traditional masala method with wild herbs, resins, and botanical extracts. Safe for
+                children, elderly, and those sensitive to chemical fragrances. Clean burning, minimal smoke, maximum
+                sanctity.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Natural+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A7 — Royal Agarbatti (normal, tint-1) -->
+          <div class="prod-row reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-1" style="position:relative;">
+                <img src="public/777.png" alt="Royal Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#4A148C,#C9941A);">Luxury</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Premium Series</div>
+              <div class="prod-name">Royal Agarbatti</div>
+              <div class="prod-sub">Shahi — Premium Luxury Incense Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Premium Blend</span><span class="q-tag">Long
+                  Burning</span><span class="q-tag">Luxury</span></div>
+              <p class="prod-desc">Inspired by royal court fragrances — a rare blend of oud, musk, saffron, and
+                sandalwood. Each Royal stick burns for over an hour, releasing a complex, majestic fragrance suited for
+                special occasions, gifting, and premium pooja rooms. Indulgence in every wisp of sacred smoke.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Royal+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- A8 — Traditional Agarbatti (flip, tint-2) -->
+          <div class="prod-row flip reveal">
+            <div class="prod-img-col">
+              <div class="prod-img-inner tint-2" style="position:relative;">
+                <img src="public/888.png" alt="Traditional Agarbatti" class="prod-img-photo"
+                  style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;">
+                <div class="prod-badge-img" style="background:linear-gradient(135deg,#8B1A2A,#C9941A);">Heritage</div>
+              </div>
+            </div>
+            <div class="prod-text-col">
+              <div class="prod-cat">Heritage Series</div>
+              <div class="prod-name">Traditional Agarbatti</div>
+              <div class="prod-sub">Parambarai — Ancestral Recipe Sticks</div>
+              <div class="prod-divider"></div>
+              <div class="prod-qualities"><span class="q-tag">Ancient Recipe</span><span
+                  class="q-tag">Handcrafted</span><span class="q-tag">Temple Grade</span></div>
+              <p class="prod-desc">Made from a family recipe passed through generations — Traditional Agarbatti uses the
+                same ingredients and handrolling technique our ancestors offered in temples. A blend of benzoin,
+                vetiver, tulsi, and neem bark creates an unmistakably authentic fragrance that resonates with devotion,
+                memory, and heritage.</p>
+              <div class="prod-actions">
+                <a href="https://wa.me/917598465053?text=I+want+to+enquire+about+Traditional+Agarbatti" target="_blank"
+                  class="wa-order-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                  </svg>Order Now</a>
+                <span class="avail-pill">Retail &amp; Wholesale</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div><!-- /route:agarbatti -->
+
     <!-- ROUTE: OUR STORY -->
     <div class="route-page" data-route="our-story">
       <section id="heritage" class="sec-tinted">
@@ -1707,8 +1988,20 @@
           <!-- Left: Vertical List -->
           <div class="promise-list" style="display: flex; flex-direction: column; gap: 50px;">
             <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
-              <div style="font-size: 2.5rem; filter: drop-shadow(0 3px 10px rgba(140, 80, 20, .2)); line-height: 1;">
-                🌿
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Lotus / botanical -->
+                  <path d="M12 20c0 0-5-3.5-5-8a5 5 0 0110 0c0 4.5-5 8-5 8z" fill="#C9941A" fill-opacity=".15"
+                    stroke="#C9941A" stroke-width="1.3" stroke-linejoin="round" />
+                  <path d="M12 14c0 0-3-2-3-5a3 3 0 016 0c0 3-3 5-3 5z" fill="#E8720C" fill-opacity=".25"
+                    stroke="#E8720C" stroke-width="1.2" stroke-linejoin="round" />
+                  <path d="M7 10c-1.5-1-2.5-3-1.5-5C7 6 8 8 8.5 10" stroke="#C9941A" stroke-width="1.2"
+                    stroke-linecap="round" fill="none" />
+                  <path d="M17 10c1.5-1 2.5-3 1.5-5C17 6 16 8 15.5 10" stroke="#C9941A" stroke-width="1.2"
+                    stroke-linecap="round" fill="none" />
+                  <line x1="12" y1="14" x2="12" y2="21" stroke="#C9941A" stroke-width="1.4" stroke-linecap="round" />
+                  <line x1="9" y1="21" x2="15" y2="21" stroke="#C9941A" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
               </div>
               <div>
                 <h3
@@ -1722,8 +2015,19 @@
               </div>
             </div>
             <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
-              <div style="font-size: 2.5rem; filter: drop-shadow(0 3px 10px rgba(140, 80, 20, .2)); line-height: 1;">
-                🏛️
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Om flame / temple lamp -->
+                  <path d="M12 3c0 0-1 3 0 5s3 3 2 6c-1 2-3 3-3 3" stroke="#E8720C" stroke-width="1.4"
+                    stroke-linecap="round" fill="none" />
+                  <path d="M12 3c0 0 1 3 0 5s-3 3-2 6c1 2 3 3 3 3" stroke="#C9941A" stroke-width="1.4"
+                    stroke-linecap="round" fill="none" />
+                  <ellipse cx="12" cy="17.5" rx="4" ry="1.5" fill="#C9941A" fill-opacity=".2" stroke="#C9941A"
+                    stroke-width="1.2" />
+                  <rect x="9.5" y="19" width="5" height="1.5" rx="0.75" fill="#C9941A" fill-opacity=".4" />
+                  <path d="M8 21h8" stroke="#C9941A" stroke-width="1.4" stroke-linecap="round" />
+                  <circle cx="12" cy="8" r="1.5" fill="#E8720C" fill-opacity=".5" />
+                </svg>
               </div>
               <div>
                 <h3
@@ -1736,8 +2040,15 @@
               </div>
             </div>
             <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
-              <div style="font-size: 2.5rem; filter: drop-shadow(0 3px 10px rgba(140, 80, 20, .2)); line-height: 1;">
-                🔬
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Award ribbon / certified badge -->
+                  <circle cx="12" cy="9" r="6" fill="#C9941A" fill-opacity=".12" stroke="#C9941A" stroke-width="1.4" />
+                  <path d="M9 9l2 2 4-4" stroke="#E8720C" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M8.5 14.5L7 21l5-2 5 2-1.5-6.5" stroke="#C9941A" stroke-width="1.3" stroke-linecap="round"
+                    stroke-linejoin="round" fill="#C9941A" fill-opacity=".1" />
+                </svg>
               </div>
               <div>
                 <h3
@@ -1750,8 +2061,16 @@
               </div>
             </div>
             <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
-              <div style="font-size: 2.5rem; filter: drop-shadow(0 3px 10px rgba(140, 80, 20, .2)); line-height: 1;">
-                📦
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Wax-seal / shield freshness -->
+                  <path d="M12 2l2.4 4.8 5.3.8-3.85 3.75.9 5.3L12 14.1l-4.75 2.55.9-5.3L4.3 7.6l5.3-.8L12 2z"
+                    fill="#C9941A" fill-opacity=".15" stroke="#C9941A" stroke-width="1.3" stroke-linejoin="round" />
+                  <path d="M9.5 11.5l2 2 3.5-3.5" stroke="#E8720C" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <line x1="12" y1="17" x2="12" y2="21" stroke="#C9941A" stroke-width="1.3" stroke-linecap="round"
+                    stroke-dasharray="1.5 2" />
+                </svg>
               </div>
               <div>
                 <h3
@@ -1764,8 +2083,18 @@
               </div>
             </div>
             <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
-              <div style="font-size: 2.5rem; filter: drop-shadow(0 3px 10px rgba(140, 80, 20, .2)); line-height: 1;">
-                🤝
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Handshake -->
+                  <path d="M3 12l4-4h4l3 3h3l4-3" stroke="#C9941A" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M3 12l2 4 3-1 3 3 3-3 3 1 2-4" stroke="#E8720C" stroke-width="1.3" stroke-linecap="round"
+                    stroke-linejoin="round" fill="#E8720C" fill-opacity=".08" />
+                  <circle cx="7" cy="10" r="1" fill="#C9941A" />
+                  <circle cx="17" cy="10" r="1" fill="#C9941A" />
+                  <path d="M10 8l2 2 2-2" stroke="#C9941A" stroke-width="1.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
               </div>
               <div>
                 <h3
@@ -1778,8 +2107,19 @@
               </div>
             </div>
             <div class="promise-item reveal" style="display: flex; gap: 28px; align-items: flex-start;">
-              <div style="font-size: 2.5rem; filter: drop-shadow(0 3px 10px rgba(140, 80, 20, .2)); line-height: 1;">
-                🚀
+              <div style="width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 3px 10px rgba(140,80,20,.25));">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Delivery truck -->
+                  <rect x="1" y="8" width="13" height="9" rx="1.5" fill="#C9941A" fill-opacity=".12" stroke="#C9941A"
+                    stroke-width="1.3" />
+                  <path d="M14 10h4l3 4v3h-7v-7z" fill="#E8720C" fill-opacity=".15" stroke="#E8720C" stroke-width="1.3"
+                    stroke-linejoin="round" />
+                  <circle cx="5.5" cy="18.5" r="1.5" fill="#C9941A" stroke="#C9941A" stroke-width=".8" />
+                  <circle cx="17.5" cy="18.5" r="1.5" fill="#E8720C" stroke="#E8720C" stroke-width=".8" />
+                  <line x1="7" y1="8" x2="7" y2="17" stroke="#C9941A" stroke-width="1" stroke-linecap="round"
+                    stroke-dasharray="1.5 2" />
+                  <path d="M3 11h7" stroke="#C9941A" stroke-width="1.2" stroke-linecap="round" />
+                </svg>
               </div>
               <div>
                 <h3
@@ -1809,21 +2149,66 @@
         </div>
         <div class="testi-grid">
           <div class="testi-card glass reveal">
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
             <p class="testi-text">"The moment we light the Classic Sambrani Cups, the entire house transforms. The
               fragrance is exactly like in our ancestral temple. Absolutely divine quality."</p>
             <div class="testi-author">Smt. Padmavathi R.</div>
             <div class="testi-city">Chennai, Tamil Nadu</div>
           </div>
           <div class="testi-card glass reveal">
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
             <p class="testi-text">"I supply to 12 temples in Karnataka. Jasa is the only brand whose quality has never
               disappointed us. Consistent, authentic, and the priests love it."</p>
             <div class="testi-author">Sri Manjunath Stores</div>
             <div class="testi-city">Mysuru — Wholesale Partner</div>
           </div>
           <div class="testi-card glass reveal">
-            <div class="testi-stars">★★★★★</div>
+            <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#E8720C">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg></div>
             <p class="testi-text">"The Computer Sambrani is a revolution for city apartments. Same sacred fragrance,
               no
               smoke alarm risks. I've gifted it to my entire building society!"</p>
@@ -1967,6 +2352,14 @@
           <li><a href="#/products">Gugal Dhoop Cones</a></li>
           <li><a href="#/products">Kesar Rose Sambrani</a></li>
           <li><a href="#/products">Chandan Powder</a></li>
+          <li><a href="#/agarbatti">Marikolunthu Agarbatti</a></li>
+          <li><a href="#/agarbatti">Jasmine Agarbatti</a></li>
+          <li><a href="#/agarbatti">Rose Agarbatti</a></li>
+          <li><a href="#/agarbatti">Sandal Agarbatti</a></li>
+          <li><a href="#/agarbatti">Pineapple Agarbatti</a></li>
+          <li><a href="#/agarbatti">Natural Agarbatti</a></li>
+          <li><a href="#/agarbatti">Royal Agarbatti</a></li>
+          <li><a href="#/agarbatti">Traditional Agarbatti</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1982,7 +2375,8 @@
     </div>
     <div class="footer-bottom">
       <div>© 2025 Jasa. All rights reserved. Made with 🙏 in India</div>
-      <div class="footer-om">ॐ</div>
+      <div class="footer-om"><svg width="28" height="28" viewBox="0 0 100 100" fill="var(--gold)"><text y=".9em"
+            font-size="90" font-family="serif">ॐ</text></svg></div>
       <div>Crafted with Devotion &amp; Tradition</div>
     </div>
   </footer>
