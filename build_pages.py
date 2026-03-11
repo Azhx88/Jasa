@@ -376,7 +376,7 @@ def create_about_page():
 PRODUCT_SPECS = {
     "classic-sambrani.html": {
         "type": "dhoop",
-        "img": "public/002.png",
+        "img": "public/002.webp",
         "cat": "Traditional Cup Series",
         "name": "Classic Sambrani Cups",
         "sub": "ಸಾಂಬ್ರಾಣಿ ಕಪ್ — Benzoin Resin Blend",
@@ -387,7 +387,7 @@ PRODUCT_SPECS = {
     },
     "computer-sambrani.html": {
         "type": "dhoop",
-        "img": "public/003.png",
+        "img": "public/003.webp",
         "cat": "Modern Series",
         "name": "Computer Sambrani",
         "sub": "Electric Dhoop Diffuser System",
@@ -398,7 +398,7 @@ PRODUCT_SPECS = {
     },
     "loban-dhoop.html": {
         "type": "dhoop",
-        "img": "public/004.png",
+        "img": "public/004.webp",
         "cat": "Resin Collection",
         "name": "Loban Dhoop Sticks",
         "sub": "Pure Frankincense — Benzoin Blend",
@@ -409,7 +409,7 @@ PRODUCT_SPECS = {
     },
     "kesar-rose-sambrani.html": {
         "type": "dhoop",
-        "img": "public/005.png",
+        "img": "public/005.webp",
         "cat": "Floral Series",
         "name": "Kesar Rose Sambrani",
         "sub": "Saffron & Rose Petal Infusion",
@@ -420,7 +420,7 @@ PRODUCT_SPECS = {
     },
     "gugal-dhoop-cones.html": {
         "type": "dhoop",
-        "img": "public/006.png",
+        "img": "public/006.webp",
         "cat": "Herbal Series",
         "name": "Gugal Dhoop Cones",
         "sub": "Sacred Commiphora Mukul Blend",
@@ -431,7 +431,7 @@ PRODUCT_SPECS = {
     },
     "chandan-sambrani-powder.html": {
         "type": "dhoop",
-        "img": "public/007.png",
+        "img": "public/007.webp",
         "cat": "Wood Series",
         "name": "Chandan Sambrani Powder",
         "sub": "Sandalwood & Sambrani Fusion",
@@ -442,7 +442,7 @@ PRODUCT_SPECS = {
     },
     "marikolunthu.html": {
         "type": "agarbatti",
-        "img": "public/111.png",
+        "img": "public/111.webp",
         "cat": "Herbal Series",
         "name": "Marikolunthu Agarbatti",
         "sub": "Plectranthus amboinicus — Sacred Herb Sticks",
@@ -453,7 +453,7 @@ PRODUCT_SPECS = {
     },
     "jasmine.html": {
         "type": "agarbatti",
-        "img": "public/222.png",
+        "img": "public/222.webp",
         "cat": "Floral Series",
         "name": "Jasmine Agarbatti",
         "sub": "Mallipoo — South Indian Jasmine Sticks",
@@ -464,7 +464,7 @@ PRODUCT_SPECS = {
     },
     "rose.html": {
         "type": "agarbatti",
-        "img": "public/333.png",
+        "img": "public/333.webp",
         "cat": "Floral Series",
         "name": "Rose Agarbatti",
         "sub": "Gulab — Rose Petal Incense Sticks",
@@ -475,7 +475,7 @@ PRODUCT_SPECS = {
     },
     "sandal.html": {
         "type": "agarbatti",
-        "img": "public/444.png",
+        "img": "public/444.webp",
         "cat": "Classic Series",
         "name": "Sandal Agarbatti",
         "sub": "Chandan — Pure Sandalwood Incense Sticks",
@@ -486,7 +486,7 @@ PRODUCT_SPECS = {
     },
     "pineapple.html": {
         "type": "agarbatti",
-        "img": "public/555.png",
+        "img": "public/555.webp",
         "cat": "Fruity Series",
         "name": "Pineapple Agarbatti",
         "sub": "Tropical — Pineapple Incense Sticks",
@@ -497,7 +497,7 @@ PRODUCT_SPECS = {
     },
     "natural.html": {
         "type": "agarbatti",
-        "img": "public/666.png",
+        "img": "public/666.webp",
         "cat": "Pure Series",
         "name": "Natural Agarbatti",
         "sub": "Masala Sticks — 100% Natural Blend",
@@ -508,7 +508,7 @@ PRODUCT_SPECS = {
     },
     "royal.html": {
         "type": "agarbatti",
-        "img": "public/777.png",
+        "img": "public/777.webp",
         "cat": "Premium Series",
         "name": "Royal Agarbatti",
         "sub": "Shahi — Premium Luxury Incense Sticks",
@@ -519,7 +519,7 @@ PRODUCT_SPECS = {
     },
     "traditional.html": {
         "type": "agarbatti",
-        "img": "public/888.png",
+        "img": "public/888.webp",
         "cat": "Heritage Series",
         "name": "Traditional Agarbatti",
         "sub": "Parambarai — Ancestral Recipe Sticks",
@@ -593,7 +593,7 @@ def create_product_page(file_path):
             </div>
         """
     
-    # use correct base image (e.g. 111.png, 222.png) loosely inferred. 
+    # use correct base image (e.g. 111.webp, 222.webp) loosely inferred. 
     # the user already populated images in earlier index HTML. We leave image href as empty string for now, but ideally we match what was there.
     # To avoid changing user's work, we leave it as previous template pattern
     

@@ -5,20 +5,20 @@ with open('build_pages.py', 'r', encoding='utf-8') as f:
 
 # Map products to images
 img_map = {
-    "classic-sambrani": "002.png",
-    "computer-sambrani": "003.png",
-    "loban-dhoop": "004.png",
-    "kesar-rose-sambrani": "005.png",
-    "gugal-dhoop-cones": "006.png",
-    "chandan-sambrani-powder": "007.png",
-    "marikolunthu": "111.png",
-    "jasmine": "222.png",
-    "rose": "333.png",
-    "sandal": "444.png",
-    "pineapple": "555.png",
-    "natural": "666.png",
-    "royal": "777.png",
-    "traditional": "888.png",
+    "classic-sambrani": "002.webp",
+    "computer-sambrani": "003.webp",
+    "loban-dhoop": "004.webp",
+    "kesar-rose-sambrani": "005.webp",
+    "gugal-dhoop-cones": "006.webp",
+    "chandan-sambrani-powder": "007.webp",
+    "marikolunthu": "111.webp",
+    "jasmine": "222.webp",
+    "rose": "333.webp",
+    "sandal": "444.webp",
+    "pineapple": "555.webp",
+    "natural": "666.webp",
+    "royal": "777.webp",
+    "traditional": "888.webp",
 }
 
 for k, v in img_map.items():
